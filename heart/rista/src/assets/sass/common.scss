@@ -1,0 +1,1566 @@
+@charset "UTF-8";
+@import "vars"; // variable
+@import "functions"; // function
+@import "reset"; // default
+@import "utilities";  // utility
+@import "layout"; // Layout
+
+// Common parts, Common component
+// Don't use id, Please use class and adding prefix .c-
+/*------------------------------------------------------------
+  Headline
+------------------------------------------------------------*/
+.c-wrap {
+  display: block;
+  width: 960px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  @include respond-to(768) {width: 100%;}
+}
+
+/*--------------------------------------------------
+  Component show following divice size.
+----------------------------------------------------*/
+.c {
+  //show on pc-------------------------------------
+  &-pc {
+    display: block!important;
+    //---------------------------------------------
+    @include respond-to(768) { display: none!important; }
+    //---------------------------------------------
+    &--inline {
+        display: inline-block!important;
+        @include respond-to(768) { display: none!important; }
+    }
+    //-----------------------------------
+  }
+  //show on smartphone---------------------------
+  &-sp {
+    display: none!important;
+    //-----------------------------------
+    @include respond-to(768) { display: block!important; }
+    //-----------------------------------
+    &--inline {
+        display: none!important;
+        //-----------------------------------
+        @include respond-to(768) { display: inline-block!important; }
+    }
+    //------------------------------------------
+  }
+  //-------------------
+  &-menuSP {
+    box-sizing: border-box;
+    top: -10px;
+    right: 10px;
+    width: 46px;
+    height: 47px;
+    padding-top: 12px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #73C3C4;
+    //--------------------
+    &__1, &__2, &__3 {
+      width: 44%;
+      height: 1px;
+      background: #73C3C4;
+      margin: 5px auto auto;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+    }
+    //---------------------------
+  }
+  //---------------------------
+  &-menulistSP {
+    position: fixed;
+    top: 0;
+    right: -65%;
+    width: 182px;
+    height: 100%;
+    padding-top: 30px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: all ease 0.5s;
+    background: #73C3C4;
+    //----------------------------
+    &--show {
+      display: block;
+      right: 0;
+      opacity: 1;
+    }
+    //----------------------------
+    @include respond-toSP(768) {
+      display: none;
+    }
+    //----------------------------
+    li {
+      position: relative;
+    }
+    //----------------------------
+    a {
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      color: #ffffff;
+      font-size: 13px;
+      padding: 19px 29px;
+      //---------------------------
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+}
+
+/*--------------------------------------------------
+  header SP
+--------------------------------------------------*/
+.c {
+  //---------------------------------
+  &-headSP {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 17px 15px;
+    text-align: left;
+    z-index: 1;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    //-------------------------------
+    &-btn1 {
+      margin-right: 7px;
+      //-----------------------------
+      img { width: 62px; }
+      //-----------------------------
+    }
+    //-------------------------------
+    &__logo {
+      img { width: 138px; }
+    }
+    //-------------------------------
+  }
+  //---------------------------------
+}
+
+/*---------------------------------
+*button component
+---------------------------------*/
+.c {
+  //-----------------------------------
+  &-btn1 {
+    display: inline-block;
+    //---------------------------------
+    a { display: block; }
+    //---------------------------------
+    &__imghead1 {
+      //-------------------------------
+      img {
+        width: 207px;
+        height: 44px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__imghead2 {
+      //-------------------------------
+      img {
+        width: 208px;
+        height: 44px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__img1 {
+      //-------------------------------
+      img {
+        width: 403px;
+        height: 84px;
+        //-----------------------------
+        @include respond-to(768) {
+          width: 202px;
+          height: 42px;
+        }
+        //-----------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+}
+
+/*---------------------------------
+*Index's component
+---------------------------------*/
+.c {
+  //-----------------------------
+  &-top3 {
+    @include respond-to(768) {
+      //-------------------------
+      &__cardImg {
+        //-----------------------
+        img { width: 84px; }
+        //-----------------------
+      }
+      //-------------------------
+    }
+    //---------------------------
+    &__cardInfo {
+      //-------------------------
+      text-align: left;
+      font-size: 15px;
+      font-weight: 500;
+      //-------------------------
+      @include respond-to(768) {
+        box-sizing: border-box;
+        width: 65%;
+        margin-right: 2px;
+        font-size: 11px;
+        @include ie() { width: 64%; }
+      }
+      //-------------------------
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      //-------------------------
+      h3 {
+        font-size: 24px;
+        font-weight: bold;
+        //-----------------------
+        @include respond-to(768) { font-size: 18px; }
+        //-----------------------
+      }
+      //-------------------------
+      &--mb1 { margin-bottom: 8px; }
+      //-------------------------
+    }
+    //---------------------------
+    &__tel {
+      position: relative;
+      font-size: 35px;
+      letter-spacing: -1px;
+      //-------------------------
+      @include respond-to(768) {
+        font-size: 25px;
+        line-height: 1.4;
+      }
+      //-------------------------
+      &:before {
+        content: url(../img/i-telimg1.svg);
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 44px;
+        margin-right: 3px;
+        vertical-align: baseline;
+        //-----------------------
+        @include respond-to(768) {
+          top: 3px;
+          transform: scale(0.71);
+          transform-origin: 0;
+          -moz-transform: scale(0.71);
+        }
+        //-----------------------
+      }
+      //-----------------------
+      &>span {
+        margin-left: 50px;
+        @include respond-to(768) {
+          margin-left: 34px;
+          @include ie() { margin-left: 36px; }
+        }
+      }
+      //-------------------------
+    }
+    //---------------------------
+  }
+  //-----------------------------
+}
+
+/*---------------------------------
+*header component(for pc)
+---------------------------------*/
+.c {
+  //--------------------------------
+  &-head1 {
+    padding: 37px 0 27px;
+    //------------------------------
+    &-btn1 {
+      position: absolute;
+      right: 4px;
+      top: 89px;
+    }
+    //------------------------------
+    &__logo {
+      display: inline-block;
+      margin-left: -15px;
+      @include respond-to(768) {
+        margin-left: -2px;
+      }
+    }
+    //------------------------------
+    &__mainimg1 {
+      //--------------------------
+      img {
+        width: 349px;
+        height: 54px;
+        @include respond-to(768) {
+          width: 150px;
+          height: 27px;
+        }
+      }
+      //--------------------------
+      &--mb1 {
+        margin-bottom: 8px;
+        @include respond-to(768) { margin-bottom: 3px; }
+      }
+      //--------------------------
+    }
+    //----------------------------
+    &__childimg1 {
+      display: block;
+      //--------------------------
+      img {
+        width: 83px;
+        @include respond-to(768) { width: 36px; }
+      }
+      //--------------------------
+      &--mr1SP {
+        @include respond-to(768) { margin-right: 2px; }
+      }
+      //--------------------------
+    }
+    //----------------------------
+    &__childimg2 {
+      //--------------------------
+      img {
+        width: 261px;
+        @include respond-to(768) { width: 115px; }
+      }
+      //--------------------------
+    }
+    //------------------------------
+  }
+  //--------------------------------
+
+  &-head2 {
+    //------------------------------------
+    position: relative;
+    padding: 18px 0 8px;
+    //------------------------------------
+    &-logo {
+      text-align: left;
+    }
+    //------------------------------------
+    &-menu {
+      //----------------------------------
+      ul {
+        display: flex;
+        justify-content: flex-start;
+      }
+      //----------------------------------
+      li {
+        margin-right: 25px;
+        //--------------------------------
+        a:before {
+          content: url(../img/i-arrow1.png);
+          position: relative;
+          top: -2px;
+          margin-right: 7px;
+        }
+        //--------------------------------
+        &:nth-child(1) {
+          img {
+            width: 99px;
+          }
+        }
+        //--------------------------------
+        &:nth-child(2) {
+          img {
+            width: 38px;
+          }
+        }
+        //--------------------------------
+        &:nth-child(3) {
+          img {
+            width: 115px;
+          }
+        }
+        //--------------------------------
+      }
+      //----------------------------------
+      a { text-decoration: none; }
+      //----------------------------------
+      &box1 {
+        position: relative;
+        top: -14px;
+        left: -4px;
+        white-space: nowrap;
+      }
+      //----------------------------------
+    }
+    //------------------------------------
+    &-btn1 {
+      position: relative;
+      top: -4px;
+    }
+    //------------------------------------
+    &__imgText {
+      position: relative;
+      text-align: left;
+      img {
+        width: 363px;
+        height: 13px;
+        @include respond-to(768) {
+          width: 150px;
+          height: 19px;
+        }
+      }
+      //----------------------------------
+      &--mb1 { margin-bottom: 2px; }
+      //----------------------------------
+    }
+    //------------------------------------
+    &__mainimg1 {
+      //--------------------------
+      img {
+        width: 64px;
+        @include respond-to(768) { width: 36px; }
+      }
+      //--------------------------
+      &--mb1 {
+        margin-bottom: 7px;
+        @include respond-to(768) { margin-bottom: 3px; }
+      }
+      //--------------------------
+    }
+    //-----------------------------------
+    &__childimg1 {
+      display: inline-block;
+      //--------------------------
+      img {
+        width: 64px;
+        @include respond-to(768) {
+          width: 36px;
+          vertical-align: middle;
+        }
+      }
+      //--------------------------
+      &--mr1 {
+        margin-right: 8px;
+        @include respond-to(768) { margin-right: 2px; }
+      }
+      //--------------------------
+    }
+    //-----------------------------------
+    &__childimg2 {
+      //--------------------------
+      img {
+        width: 196px;
+        @include respond-to(768) { width: 115px; }
+      }
+      //--------------------------
+    }
+    //-----------------------------------
+  }
+
+
+}
+
+/*---------------------------------
+*banner
+---------------------------------*/
+.c {
+  //---------------------------------
+  &-banner1 {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    //--------------------------------
+    & > img { width: 100%; }
+    //--------------------------------
+    &-boxinfo1 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      text-align: left;
+      margin: auto;
+      //-------------------------------
+      @include respond-to(768) {
+        left: 8%;
+      }
+      //-------------------------------
+      img { width: 100%; }
+      //-------------------------------
+      &--size1 {
+        width: 20%;
+        max-width: 401px;
+        height: 44%;
+        max-height: 180px;
+        @include respond-to(768) {
+          width: 56%;
+          height: 37%;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      //-------------------------------
+      &--size2 {
+        width: 23%;
+        height: 44%;
+        max-width: 453px;
+         max-height: 193px;
+        @include respond-to(768) {
+          width: 71%;
+          height: 44%;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      //-------------------------------
+      &--size3 {
+        width: 30%;
+        max-width: 584px;
+        height: 42%;
+        max-height: 219px;
+        @include respond-to(768) {
+          width: 78%;
+          height: 40%;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }//use for banner of page dannetu
+      //-------------------------------
+      &--mb1 {
+        margin-bottom: 10%;
+        @include respond-to(768) { margin-bottom: 7%; }
+      }
+      //-------------------------------
+      &--mb2 {
+        margin-bottom: 7%;
+        @include respond-to(768) { margin-bottom: 4%; }
+      }
+      //-------------------------------
+      &--mb3 {
+        margin-bottom: 5%;
+        @include respond-to(768) { margin-bottom: 5%; }
+      }
+      //-------------------------------
+    }
+    //--------------------------------
+    &-boxText1 {
+      position: absolute;
+      top: 112px;
+      text-align: left;
+      //------------------------------
+      @include respond-to(768) {
+        margin-left: 30px;
+      }
+      //------------------------------
+      &--mb1 {
+        margin-bottom: 39px;
+        //----------------------------
+        @include respond-to(768) {
+          margin-bottom: 20px;
+        }
+        //----------------------------
+      }
+      &--mb2 {
+        margin-bottom: 26px;
+      }
+      //------------------------------
+    }
+    //--------------------------------
+    &--size1 {
+      width: 960px;
+      margin: 0 auto;
+      @include respond-to(768) { width: 100%; }
+    }
+    //-------------------------------
+    &__img2infil {
+      @include respond-to(768) {width: 120%; }
+    }
+    //-------------------------------
+    &__img2dannetu {
+      width: 69%;
+      @include respond-to(768) { width: 71%; }
+      //-----------------------------
+    }
+    //-------------------------------
+  }
+  //---------------------------------
+}
+
+/*---------------------------------
+*title
+---------------------------------*/
+.c {
+  //-------------------------------
+  &-title1 {
+    &--mb1 {
+      margin-bottom: 26px;
+      //---------------------------
+      @include respond-to(768) { margin-bottom: 16px; }
+      //---------------------------
+    }
+    &--mb2 {
+      margin-bottom: 36px;
+      //---------------------------
+      @include respond-to(768) { margin-bottom: 16px; }
+      //---------------------------
+    }
+    //-----------------------------
+    &__maintitleimg1 {
+      img {
+        width: 164px;
+        height: 84px;
+        @include respond-to(768) {
+          width: 84px;
+          height: 44px;
+        }
+      }
+      //---------------------------
+    }
+    //-----------------------------
+    &__maintitleimg2 {
+      img {
+        width: 386px;
+        height: 82px;
+        @include respond-to(768) {
+          width: 192px;
+          height: 40px;
+        }
+      }
+      //---------------------------
+    }
+    //-----------------------------
+    &__maintitleimg3 {
+      img {
+        width: 247px;
+        height: 82px;
+        @include respond-to(768) {
+          width: 123px;
+          height: 40px;
+        }
+      }
+      //---------------------------
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+}
+
+/*---------------------------------
+*list1
+---------------------------------*/
+.c-list1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*---------------------------------
+*footer
+---------------------------------*/
+.c {
+  //----------------------------------
+  &-footer {
+    padding: 64px 0;
+    color: #ffffff;
+    background: #73C6C7;
+    //--------------------------------
+    @include respond-to(768) {
+      padding: 32px 20px;
+    }
+    //--------------------------------
+    &-list1 {
+      width: 716px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      //--------------------------------
+      @include respond-to(768) {
+        width: auto;
+        max-width: 358px;
+      }
+      //------------------------------
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //----------------------------
+        @include respond-to(768) {
+          flex-wrap: wrap;
+          //--------------------------
+        }
+        //----------------------------
+      }
+      //------------------------------
+      &--mb1 {
+        margin-bottom: 55px;
+        @include respond-to(768) {
+          margin-bottom: 24px;
+        }
+      }
+      //------------------------------
+    }
+    //--------------------------------
+    &-li {
+      //------------------------------
+      &__img1 {
+        //----------------------------
+        img {
+          width: 59px;
+          height: 21px;
+          @include respond-to(768) {
+            width: 29px;
+            height: 10px;
+          }
+        }
+        //----------------------------
+      }
+      //------------------------------
+      &__img2 {
+        //----------------------------
+        img {
+          width: 117px;
+          height: 22px;
+          @include respond-to(768) {
+            width: 57px;
+            height: 11px;
+          }
+        }
+        //----------------------------
+      }
+      //------------------------------
+      &__img3 {
+        //----------------------------
+        img {
+          width: 50px;
+          height: 23px;
+          @include respond-to(768) {
+            width: 25px;
+            height: 12px;
+          }
+        }
+        //----------------------------
+      }
+      //------------------------------
+      &__img4 {
+        //----------------------------
+        img {
+          width: 150px;
+          height: 23px;
+          @include respond-to(768) {
+            width: 71px;
+            height: 12px;
+          }
+        }
+        //----------------------------
+      }
+      //------------------------------
+    }
+    //--------------------------------
+  }
+  //----------------------------------
+  &-copyright {
+    font-size: 12px;
+    font-weight: 100;
+    font-family: "ヒラギノ角ゴシック Pro";
+    //--------------------------------
+    @include respond-to(768) {
+      font-size: 9px;
+    }
+    //--------------------------------
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    //--------------------------------
+    &--bigtext {
+      font-size: 14px;
+      font-weight: 300;
+      //------------------------------
+      @include respond-to(768) {
+        font-size: 9px;
+      }
+      //------------------------------
+    }
+    //--------------------------------
+  }
+  //----------------------------------
+}
+
+/*---------------------------------
+*other
+---------------------------------*/
+.c {
+  //-------------------------------
+  &-btnSP {
+    @include respond-to(768) {
+      img { width: 125px; }
+    }
+  }
+  //-------------------------------
+}
+
+/*---------------------------------
+  info Box Component
+---------------------------------*/
+.c-infoBox {
+  margin-bottom: 72px;
+  @include respond-to(768) {
+    //-----------------------------
+    &-list1 {
+      //---------------------------
+      .c-list1 { display: block; }
+      //---------------------------
+    }
+    //-----------------------------
+    &__cardImg {
+      img { width: 90px }
+    }
+    //-----------------------------
+    &__nonelineSP { border-bottom: none!important; }
+    //-----------------------------
+  }
+  //-------------------------------
+  &-guildBox1 {
+    height: 80px;
+    padding: 15px 27px;
+    border: 2px solid #73C6C7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    //-----------------------------
+    @include respond-to(768) {
+      max-width: 330px;
+      box-sizing: border-box;
+      height: auto;
+      margin: 0 auto;
+      padding: 18px 16px;
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &-guildText {
+    font-size: 14px;
+    text-align: left;
+    flex-shrink: 1;
+    //-----------------------------
+    @include respond-to(768) {
+      font-size: 12px;
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &-guildImg {
+    margin-right: 10px;
+    @include respond-to(768) {
+      img { width: 100%; }
+    }
+  }
+  //-------------------------------
+  &__card {
+    width: 450px;
+    box-sizing: border-box;
+    padding: 33px 0 20px;
+    border-top: 1px solid #A2A2A2;
+    //-----------------------------
+    @include respond-to(768) {
+      width: auto;
+      max-width: 330px;
+      margin: 0 auto;
+      padding: 24px 0 20px;
+    }
+    //-----------------------------
+    &__botline { border-bottom: 1px solid #A2A2A2; }
+    //-----------------------------
+  }
+  //-------------------------------
+  &__btn1 {
+    margin: 57px 0;
+    //-----------------------------
+    @include respond-to(768) {
+      margin: 25px 0;
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+}
+
+/*---------------------------------
+  Ads Box Component
+---------------------------------*/
+.c-ads {
+  margin-bottom: 75px;
+  @include respond-to(768) {
+    margin-bottom: 34px;
+    //-----------------------------
+    &__SPbox1 {
+      margin: 0 auto;
+      padding: 0 9px 10px;
+      flex-shrink: 1;
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &-adsbox1 {
+    box-sizing: border-box;
+    width: 468px;
+    height: 100%;
+    padding: 19px 15px 41px;
+    border: 2px solid #73C6C7;
+    font-size: 18px;
+    line-height: 35px;
+    //-----------------------------
+    @include respond-to(768) {
+      width: auto;
+      max-width: 323px;
+      margin: 0 auto;
+      font-size: 12px;
+      text-align: left;
+      padding: 15px 15px 20px;
+      line-height: 1.7;
+      border: 1px solid #73C6C7;
+    }
+    //-----------------------------
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.5;
+      //---------------------------
+      @include respond-to(768) {
+        font-size: 15px;
+      }
+      //---------------------------
+    }
+    //-----------------------------
+    &__type1 {
+      //---------------------------
+      @include respond-to(768) {
+        //margin-right: 10px;
+      }
+      //---------------------------
+      h2 {
+        margin: 32px 0 39px;
+        letter-spacing: 4px;
+        line-height: 1.6;
+        //-------------------------
+        @include respond-to(768) {
+          margin: 8px 0 22px;
+        }
+        //-------------------------
+      }
+      //---------------------------
+    }
+    //-----------------------------
+    &__type2 {
+      //---------------------------
+      h2 {
+        margin: 12px 0 26px;
+        letter-spacing: 3px;
+        line-height: 43px;
+        //---------------------------
+        @include respond-to(768) {
+          margin: 0 0 6px;
+          line-height: 1.6;
+        }
+        //---------------------------
+      }
+      //---------------------------
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &-box1 {
+    position: relative;
+    overflow: hidden;
+    //-----------------------------
+    @include respond-to(768) {
+      max-width: 684px;
+      margin: 0 auto;
+      padding: 0 14px;
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &__line {
+    width: 89%;
+    border: 1px solid #73C6C7;
+    //-----------------------------
+    @include respond-to(768) {
+      width: 100%;
+      border: 0.5px solid #73C6C7;
+    }
+    //-----------------------------
+    &--mb1 {
+      margin-bottom: 27px;
+      @include respond-to(768) { margin-bottom: 14px; }
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &__linebg1, &__linebg2 {
+    position: absolute;
+    width: 114px;
+    height: 246px;
+  }
+  //-------------------------------
+  &__linebg1 {
+    top: 128px;
+    left: -137px;
+    background: url(../img/i-linebg1.png) no-repeat;
+  }
+  //-------------------------------
+  &__linebg2 {
+    top: 120px;
+    right: -165px;
+    background: url(../img/i-linebg2.png) no-repeat;
+  }
+  //-------------------------------
+}
+
+/*---------------------------------
+  Taishin Component
+---------------------------------*/
+.c {
+  //-----------------------------------
+  &-taishin2 {
+    //---------------------------------
+    &-mainbox {
+      display: block;
+      position: relative;
+      margin-right: 20px;
+      //-------------------------------
+      @include respond-to(768) { margin-right: 0; }
+      //-------------------------------
+      &--mb1 {
+        margin-bottom: 59px;
+      }
+      //-------------------------------
+      @include respond-to(768) { margin-bottom: 32px; }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__imgSP1 {
+      //-------------------------------
+      @include respond-to(768) {
+        width: 100%;
+        //-----------------------------
+        &--mt1 { margin-top: 12px; }
+        //-----------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__h3{
+      //-------------------------------
+      &--mb1 {
+        margin-bottom: 24px;
+        @include respond-to(768) { margin-bottom: 12px; }
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__text {
+      font-size: 24px;
+      line-height: 1.75;
+      text-align: justify;
+      padding: 0 4px;
+      //-------------------------------
+      @include respond-to(768) {
+        font-size: 12px;
+        padding: 0;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__info1 {
+      padding: 26px 0 0 11px;
+      text-align: left;
+      @extend %cf;
+      //-------------------------------
+      @include respond-to(768) {
+        padding: 13px 0 0 0;
+      }
+      //-------------------------------
+      h3 {
+        font-size: 32px;
+        line-height: 1.3;
+        //-------------------------------
+        @include respond-to(768) {
+          font-size: 15px;
+        }
+        //-------------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__img1 {
+      float: right;
+      margin-left: 22px;
+      margin-top: 10px;
+    }
+    //---------------------------------
+    &__listImg {
+      //-------------------------------
+      &--mt1 {
+        margin-top: 38px;
+        @include respond-to(768) { margin-top: 16px; }
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__btn1 {
+      &--mt1 {
+        margin-top: 84px;
+        @include respond-to(768) { margin-top: 32px; }
+      }
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+}
+
+/*---------------------------------
+  Point component
+---------------------------------*/
+.c-point1 {
+  text-align: left;
+  position: relative;
+  //------------------------------------
+  h2 {
+    margin-bottom: 14px;
+    //----------------------------------
+    @include respond-to(768) {
+      margin-bottom: 5px;
+    }
+    //----------------------------------
+    img {
+      width: 126px;
+      @include respond-to(768) {
+        width: 52px;
+        vertical-align: baseline;
+      }
+    }
+    //----------------------------------
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 90%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto auto auto auto;
+      background: #73C3C4;
+      //--------------------------------
+      @include respond-to(768) {
+        width: 2px;
+        top: -2px;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+  }
+  //------------------------------------
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: url(../img/taishin/i-linebot1.png) repeat-x left top;
+  }
+  //------------------------------------
+  &__img {
+    //----------------------------------
+    &--ml1 {
+      margin-left: 24px;
+      //--------------------------------
+      @include respond-to(768) {
+        margin-left: 7px;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+  }
+  //------------------------------------
+}
+
+/*---------------------------------
+  infil Component
+---------------------------------*/
+.c {
+  //------------------------------------
+  &-infil2 {
+    //----------------------------------
+    &-list1 {
+      padding: 0 23px;
+      @include respond-to(768) {
+        padding: 0 0 0 17px;
+        .c-list1 {
+          display: block;
+        }
+      }
+    }
+    //----------------------------------
+    &-boxcaro1 {
+      position: relative;
+      padding: 32px 32px;
+      box-sizing: border-box;
+      background: url(../img/infil/i-bg1.png) no-repeat;
+      background-size: cover;
+      @include respond-to(768) {
+        padding: 12px 12px;
+      }
+      //--------------------------------
+      &__inner {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background: #fff;
+        padding: 37px 30px;
+        @include respond-to(768) {
+          padding: 25px 23px 15px;
+        }
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &-mainbox {
+      @include respond-to(768) {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      //--------------------------------
+      &--mb1 {
+        margin-bottom: 57px;
+        @include respond-to(768) {
+          margin-bottom: 26px;
+        }
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__info1 {
+      padding: 37px 0 0;
+      @include respond-to(768) { padding-top: 12px; }
+      //--------------------------------
+      h2 {
+        font-size: 33px;
+        text-align: justify;
+        @include respond-to(768) { font-size: 15px; }
+      }
+      //--------------------------------
+      &--mb1 {
+        margin-bottom: 39px;
+        @include respond-to(768) { margin-bottom: 17px; }
+      }
+      //--------------------------------
+      &--ml1 {
+        margin-left: 21px;
+        @include respond-to(768) { margin-left: 0; }
+      }
+      //--------------------------------
+      &--mb2 {
+        margin-bottom: 46px;
+        @include respond-to(768) { margin-bottom: 15px; }
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__card {
+      position: relative;
+      @include respond-to(768) {
+        &--mb1SP {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    //----------------------------------
+    &__bigimg1 {
+      @include respond-to(768) {
+        width: 241px;
+      }
+    }
+    //----------------------------------
+    // &__lb1 {
+    //   position: absolute;
+    //   top: -18px;
+    //   left: -20px;
+    //   @include respond-to(768) {
+    //     top: -5px;
+    //     left: -24px;
+    //     width: 90px;
+    //   }
+    //   //--------------------------------
+    //   &--pos1 {
+    //     top: -22px;
+    //     left: -22px;
+    //     @include respond-to(768) {
+    //       top: -4px;
+    //       left: -24px;
+    //     }
+    //   }
+    //   //--------------------------------
+    //   &--size1SP { width: 107px; }
+    //   //--------------------------------
+    // }
+
+    &__lb1 {
+      position: absolute;
+      top: -18px;
+      left: -20px;
+      @include respond-to(768) {
+        top: -5px;
+        left: -24px;
+        //width: 90px;
+      }
+      //--------------------------------
+      &--size1 {
+        width: 96px;
+        height: 97px;
+        @include respond-to(768) {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      //--------------------------------
+      &--size2 {
+        width: 134px;
+        height: 135px;
+        @include respond-to(768) {
+          width: 107px;
+          height: 107px;
+        }
+      }
+      //--------------------------------
+      &--pos1 {
+        top: -22px;
+        left: -22px;
+        @include respond-to(768) {
+          top: -4px;
+          left: -24px;
+        }
+      }
+      //--------------------------------
+      //&--size1SP { width: 107px; }
+      //--------------------------------
+    }
+
+    //----------------------------------
+    &__triangle1 {
+      @include respond-to(768) {
+        img { width: 33px; }
+      }
+      //--------------------------------
+      &--mtb1 {
+        margin: 30px 0 29px;
+        @include respond-to(768) {
+          margin: 14px 0 10px;
+        }
+      }
+      //--------------------------------
+      &--mtb2 {
+        margin: 21px 0 29px;
+        @include respond-to(768) {
+          margin: 15px 0 13px;
+        }
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__linebot1 {
+      position: relative;
+      //--------------------------------
+      &:after {
+        content: '';
+        height: 7px;
+        background: url(../img/infil/i-linebot1.png) repeat-x;
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+        z-index: -1;
+        width: 100%;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &-titlebox {
+      display: inline-block;
+      position: absolute;
+      top: -15px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 191px;
+      padding: 7px 0;
+      font-weight: bold;
+      font-size: 27px;
+      box-sizing: border-box;
+      background: #fff;
+      border: 3px solid #73C6C7;
+      @include respond-to(768) {
+        top: -9px;
+        width: 91px;
+        font-size: 14px;
+        padding: 3px 0;
+        border: 2px solid #73C6C7;
+      }
+    }
+    //----------------------------------
+    &__text2 {
+      font-size: 27px;
+      font-weight: bold;
+      @include respond-to(768) {
+        font-size: 13px;
+        line-height: 1.7;
+      }
+    }
+    //----------------------------------
+    &__text1 {
+      font-weight: bold;
+      font-size: 21px;
+      text-align: center;
+      line-height: 1.7;
+      letter-spacing: 2px;
+      @include respond-to(768) {
+        font-size: 13px;
+        letter-spacing: 0px;
+      }
+      //--------------------------------
+      @include respond-to(345) {
+        font-size: 12px;
+      }
+      //--------------------------------
+      &--mb1 {
+        margin-bottom: 50px;
+        @include respond-to(768) {
+          margin-bottom: 25px;
+        }
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+  }
+  //------------------------------------
+}
+
+/*---------------------------------
+  dannetu Component
+---------------------------------*/
+.c {
+  //-----------------------------------
+  &-dannetu2 {
+    //---------------------------------
+    &-mainbox {
+      display: block;
+      position: relative;
+      //-------------------------------
+      @include respond-to(768) { margin-right: 0; }
+      //-------------------------------
+      &--mb1 {
+        margin-bottom: 77px;
+      }
+      //-------------------------------
+      &--mb2 {
+        margin-bottom: 107px;
+      }
+      //-------------------------------
+      @include respond-to(768) { margin-bottom: 32px; }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__imgSP1 {
+      //-------------------------------
+      @include respond-to(768) {
+        width: 100%;
+        //-----------------------------
+        &--mt1 { margin-top: 12px; }
+        //-----------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__h3{
+      //-------------------------------
+      &--mb1 {
+        margin-bottom: 14px;
+        @include respond-to(768) { margin-bottom: 12px; }
+      }
+      //-------------------------------
+      &--mb2 {
+        margin-bottom: 26px;
+        @include respond-to(768) { margin-bottom: 12px; }
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__text {
+      font-size: 25px;
+      line-height: 1.75;
+      text-align: justify;
+      //-------------------------------
+      @include respond-to(768) {
+        font-size: 12px;
+        padding: 0;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__info1 {
+      padding: 28px 0 0 18px;
+      text-align: left;
+      @extend %cf;
+      //-------------------------------
+      @include respond-to(768) {
+        padding: 13px 0 0 0;
+        text-align: justify;
+      }
+      //-------------------------------
+      h3 {
+        font-size: 34px;
+        line-height: 1.3;
+        //-------------------------------
+        @include respond-to(768) {
+          font-size: 15px;
+        }
+        //-------------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__img1 {
+      float: right;
+      //-------------------------------
+      &--mlt1 {
+        margin-left: 38px;
+        margin-top: 14px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__listImg {
+      //-------------------------------
+      &--mt1 {
+        margin-top: 38px;
+        @include respond-to(768) { margin-top: 16px; }
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__btn1 {
+      &--mt1 {
+        margin-top: 74px;
+        @include respond-to(768) { margin-top: 32px; }
+      }
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+}

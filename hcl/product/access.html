@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta content="ja" http-equiv="Content-Language">
+  <meta content="text/css" http-equiv="Content-Style-Type">
+  <meta content="text/javascript" http-equiv="Content-Script-Type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Smart Phone Program for Visiting Nurse Business software</title>
+  <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/pretty_checkbox.css">
+</head>
+
+<body>
+  <header class="flex">
+    <div class="inner">
+      <div class="wrap">
+        <h1 class="letter-space head-login-title1">利 用 者 選 択</h1>
+        <a class="btn-white btn-white-right" href="menu.html">戻 る</a>
+      </div>
+    </div>
+  </header>
+  <div class="inner">
+    <div class="wrap">
+      <div class="clear-fix"></div>
+      <ul class="access-list-btn">
+        <li>
+          <label for="manager_1">担当者</label>
+          <input class="form-control" id="picked_day" type="text" name="input">
+          <button class="label-calen" id="label_calen">
+            <img class="img-calendar" src="assets/images/calendar.png" alt="label-calen">
+          </button>
+        </li>
+        <li>
+          <button class="access-btn">&lt;</button>
+        </li>
+        <li>
+          <button class="access-btn">今日</button>
+        </li>
+        <li>
+          <button class="access-btn">&gt;</button>
+        </li>
+      </ul>
+      <ul class="track-box">
+        <li><a href="#">実 績 登 録</a></li>
+        <li><a class="crnew-btn" href="detail.html">新 規</a></li>
+      </ul>
+      <div class="box2">
+        <div class="left-box">
+          <button class="btn-grey">↑</button>
+          <button class="btn-white1">↓</button>
+          <button class="btn-grey ml-10">自</button>
+          <button class="btn-white1">他</button>
+          <a class="btn-grey ml-10" href="detail_list.html">利用者抽出</a>
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+      <div class="dl-content dl-top">
+        <dl class="dl-info-access dl-info-access-js">
+          <div class='access-box bg-active'></div>
+          <dl>
+            <dt>2017-11-01</dt>
+            <dd>09:20-10:20 (01:00)</dd>
+            <dd class="dd-last"></dd>
+          </dl>
+          <dl>
+            <dt class="text-blue">00025</dt>
+            <dd class="text-blue acc-name-js">鈴木 一郎</dd>
+            <dd class="dd-last">></dd>
+          </dl>
+          <dl>
+            <dt>医療</dt>
+          </dl>
+        </dl>
+        <dl class="dl-info-access dl-info-access-js dl-focus">
+          <div class='access-box'></div>
+          <dl>
+            <dt>2017-11-15</dt>
+            <dd>10:30-11:00 (00:30)</dd>
+            <dd class="dd-last"></dd>
+          </dl>
+          <dl>
+            <dt class="text-blue">00045</dt>
+            <dd class="text-blue acc-name-js">山田 花子</dd>
+            <dd class="dd-last">></dd>
+          </dl>
+          <dl>
+            <dt>医療</dt>
+            <!--<dd>伊東 ひろ子</dd>-->
+            <dd></dd>
+          </dl>
+        </dl>
+        <dl class="dl-info-access dl-info-access-js">
+          <div class='access-box bg-active'></div>
+          <dl>
+            <dt>2017-11-20</dt>
+            <dd>12:20-14:20 (02:00)</dd>
+            <dd class="dd-last"></dd>
+          </dl>
+          <dl>
+            <dt class="text-blue">00255</dt>
+            <dd class="text-blue acc-name-js">五十嵐 佳代子</dd>
+            <dd class="dd-last">></dd>
+          </dl>
+          <dl>
+            <dt>介護</dt>
+          </dl>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div id="popup" class="popup">
+    <div class="popup_content">
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <span id="prev"><img class="img-calen-btn" src="assets/images/img_prev.png"></span>
+          <div class="group-select">
+            <select class="calen-select" id="calen_select_years">
+            </select><span>年</span>
+            <select class="calen-select" id="calen_select_months">
+              <option value="0">1</option>
+              <option value="1">2</option>
+              <option value="2">3</option>
+              <option value="3">4</option>
+              <option value="4">5</option>
+              <option value="5">6</option>
+              <option value="6">7</option>
+              <option value="7">8</option>
+              <option value="8">9</option>
+              <option value="9">10</option>
+              <option value="10">11</option>
+              <option value="11">12</option>
+            </select><span>月</span>
+          </div>
+          <span id="next"><img class="img-calen-btn" src="assets/images/img_next.png"></span>
+        </div>
+        <div class="calen-show">
+          <table id="calen_table">
+            <tbody>
+              <tr class="calen-days">
+                <td>日</td>
+                <td>月</td>
+                <td>火</td>
+                <td>水</td>
+                <td>木</td>
+                <td>金</td>
+                <td>土</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="calen-list-btn">
+          <button class="calen-btn1"><span class="lb-grey">今 日</span></button>
+          <div class="calen-btn2">
+            <button id="pickDay_btn"><span class="lb-green">設 定</span></button>
+            <button id="btn_close" type="button"><a class="lb-white" href="#">戻 る</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/jquery-3.2.1.min.js"></script>
+  <script src="./assets/js/calen.js"></script>
+  <script src="./assets/js/cookie.js"></script>
+  <script src="./assets/js/access.js"></script>
+  <script src="./assets/js/detail.js"></script>
+  <script src="./assets/js/getdata.js"></script>
+</body>
+
+</html>

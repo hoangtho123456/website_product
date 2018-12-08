@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*------------------------------------------------------------
+	clearfix（float解除）
+------------------------------------------------------------*/
+.clearfix {
+	*zoom: 1;
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
+/*------------------------------------------------------------
+  Img show on Smartphone creen
+------------------------------------------------------------*/
+  // .u {
+  //   //--------------------------------
+  //   @include respond-to(768) {
+  //     &__imgSP {
+  //       //img for title
+  //       &-MainTitle1 { width: 90px; }
+  //       &-MainTitle2 { width: 215px; }
+  //       &-smTitle1Top { width: 112px; }
+  //       &-smTitle2Top { width: 43px; }
+  //       &-smTitle3Top { width: 124px; }
+  //       &-Talk { width: 260px; }
+  //       &-Shop { width: 125px; }
+
+  //       //img for footer
+  //       &-li1 { width: 29px; }
+  //       &-li2 { width: 57px; }
+  //       &-li3 { width: 25px; }
+  //       &-li4 { width: 71px; }
+  //     }
+  //     //--------------------------------
+  //   }
+  //   //----------------------------------
+  // }

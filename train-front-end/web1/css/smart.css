@@ -1,0 +1,263 @@
+/******mobile***********/
+@media only screen and (max-width: 644px){
+.imageAutoSize{
+    display: inline-block;
+    height: auto;
+    margin-bottom: 0 10px;
+    max-width: 100%;
+}
+.left{float: none}
+.right{float: none}
+.hideMobile {
+    display: none !important;
+}
+.hideDesktop{
+    display: inline-block !important;
+}
+#banner{
+    height: auto;
+    margin-top: 0;
+} 
+#banner .inner{
+    width: auto;
+    min-width: 0;
+} 
+#header {
+    padding: 5px 0 0;
+    min-width: 0;
+    text-align: center;
+}
+.logo {
+    margin: 0 auto 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 0;
+}
+.contactLinks {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+.inner {
+    margin: 0 auto;
+    min-width: 0;
+    width: 96%;
+}
+.menuBannerWrap {
+    padding-top: 10px;
+}
+.bx-wrapper {
+    background: transparent !important;  
+    padding-bottom: 10px !important;  
+}
+#wrapper {
+    margin: 40px 0 50px;
+    overflow: hidden;
+    min-width: 0px;
+}
+#wrapper .mainContent{
+    float: none;
+    margin-left: 0;
+    width: auto;
+    margin: 0 auto 45px;
+}
+#wrapper .sidebar{
+    float: none;
+    margin: 0 auto;
+}
+.leftBox1{
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+.leftBox2{
+    width: auto;
+    text-align: left;
+    margin: 0 auto 15px;
+}  
+.rightBox1{
+    width: auto;
+    margin: 0 auto;
+}
+.rightBox2{
+    width: auto;
+    margin: 0 auto;
+}
+.indexLinks{
+    text-align: center;
+}
+.indexLinks > li{
+    padding: 0 5px 10px 5px;
+}
+.indexLinks > li.last{
+    padding-right: 5px;
+}
+/*footer*/
+#footer{
+    min-width: 0;
+    background: #4d3102;
+}
+.ftLogo{
+    width: 100%;
+    padding: 0 0 10px 0;
+    background: transparent;
+    text-align: center;
+}
+.footerMenu{
+    margin: 0 auto;
+    width: 100%;
+}
+.ftContactLinks {
+    padding: 10px 0 0;
+    width: 100%;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+}
+.copyright{
+    text-align: center;
+    margin-top: 0;
+}
+/*end footer*/
+/*common*/
+.tableWrapper{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.tableCommon th{
+    width: auto;
+}
+/*end common*/
+/*Nhung*/
+img.img01{
+	float:none;
+	margin: 0 auto;
+	}
+.import_txt{
+	float:none;
+	max-width:none;
+	}
+.ul_implant {
+    text-align: center;
+}
+.ul_implant li {
+    margin-bottom:10px;
+	width:100%;
+}
+.n_midth{
+	margin:0px auto;
+	}
+.tableWrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.implant_txt2{
+	float:none;
+	max-width:none;
+	}
+.w_33 {
+    width: 100%;
+}
+.n_list ul{
+	width:100%;
+	}
+.float_limg {
+    float: none;
+	margin:0 auto;
+}
+.n_list li {
+    line-height:normal;
+    padding: 8px 0;
+    vertical-align: middle;
+}
+.esthetics_txt{
+	float:none;
+	max-width:none;
+	}
+.esthetics_txt2{
+	float:none;
+	max-width:none;
+	}
+.esthetics_txt3{
+	float:none;
+	max-width:none;
+	}
+.esthetics_txt4{
+	float:none;
+	max-width:none;
+	}
+.esthetics_txt5{
+	float:none;
+	max-width:none;
+	}
+img.esthetics_img{
+	float:none;
+	margin: 0 auto;
+	}
+img.esthetics_img2{
+	float:none;
+	margin: 0 auto;
+	}
+.w_50{
+	width:100%;
+	}
+.n_bottom_sp{
+	margin-bottom:30px;
+	}
+/*End Nhung*/
+/*hieu*/
+.ct_margin{
+	margin-bottom: 20px;
+}
+.text_preMain,
+.ul_pre02,
+.text_preMain02,
+.text_preMain04,
+.text_preMain_05,
+.text_preMain07,
+.childPre08,
+.dl_preMain,
+.text_rege3,
+.text_rege2,
+.text_rege1,
+.text_rege,
+.text_bacillus,
+.text_preMain08{
+	max-width: 100%;
+}
+.ChildPre{
+	max-width: 100%;
+	text-align: center;	
+}
+.ChildPre img{
+	margin: 0 7px;
+}
+.dis_mobile{
+	display: none  !important;
+}
+.dis_phone{
+	display: block !important;
+}
+.ulpre07{
+	margin: auto;
+	width: 176px;
+	display: inline-block;
+}
+.ulpre07 li.lipre07{
+	padding-top: 0px;
+	margin:10px 0px;
+}
+.img_bor{
+	max-width: 97%;
+}
+.childPre08 img{
+	margin: 5px;	
+}
+.ulpre07_spec li{
+	width: 100%;
+}
+/*end hieu*/
+/*duy*/
+
+/*end duy */
+}/*do not remove this*/

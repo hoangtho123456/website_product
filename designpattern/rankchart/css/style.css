@@ -1,0 +1,35 @@
+.sl-center { 
+  text-align: center; 
+  margin: 0;
+}
+canvas#canvas_char {
+	margin: 0 auto;
+	text-align: center;
+}
+body {
+	font-family: Arial, "Times New Roman";
+    margin: 10px auto;
+    width: 650px;
+    height: 400px;
+    margin-left: 200px;
+}
+
+div.content {
+	margin: 0;
+	padding: 0;
+}
+#left {
+	margin: 0;
+	width: 120px;
+	height: 400px;
+	transform: rotate(-90deg);
+	position: absolute;
+}
+#left h2 {
+	position: absolute;
+	width: 400px;
+	top: 75px;
+	left: -140px;
+	text-align: center;
+	margin: 0;
+}

@@ -1,0 +1,37 @@
+.list-hira {
+  width: 320px;
+  display: block;
+  margin: 10px auto auto;
+  @include respond-to(480) {
+    width: 270px;
+  }
+  &>li {
+    &>ul {
+     @extend %tb-flex;
+      margin-bottom: 5px;
+      justify-content: space-between;
+      li {
+        @extend %tb-flex;
+        @extend %tb-flex-center;
+        width: 60px;
+        height: 60px;
+        background: #efefef;
+        box-sizing: border-box;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #a2a2a2 #d7d7d7 #d7d7d7 #a2a2a2;
+        color: #3f3cde;
+        font-size: 20px;
+        font-weight: bold;
+        @include respond-to(480) {
+          width: 50px;
+          height: 50px;
+          font-size: 17px;
+        }
+        &:first-child {
+          color: #eb4bb0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,279 @@
+/**
+*file style.scss
+*/
+@font-face {
+  font-family: 'sinkin-sans';
+  src: url('/assets/fonts/Nobile-BoldItalic.ttf');
+}
+html {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+body,
+div,
+span,
+object, 
+iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, 
+q, strong, 
+tt, var, dl, dt, dd, ol, ul, li, form, label, legend, 
+caption, tbody, tfoot, thead,header, footer { @extend html; }
+ul, ol {list-style-type: none;}
+a {text-decoration: none;}
+a, button {cursor: pointer;}
+:focus {outline: 0;}
+body {
+  font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+  background: $colorWhite;
+  font-size: 16px;
+  @include  respond-to(480) {
+    font-size: 14px;
+  }
+}
+.clear-fix {
+  content: "";
+    clear: both;
+    display: table;
+}
+.inner {
+  width: 95%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  clear: both;
+  height: auto;
+}
+header{
+  //padding-bottom:5px;
+  margin-bottom:8px;
+  height: auto;
+  background-color: #0066ff;
+    .head-login-title1 {
+      padding: 5px 0;
+      text-align: center;
+      font-size: 16px;
+      color: $colorWhite;
+    }
+    .head-login-title2 {
+    	@extend .head-login-title1;
+    	color: $colorBlack;
+    	background-color: #d9ecff;
+    }
+}
+.fl-left {float: left;}
+.fl-right {float: right;}
+.wrap {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+}
+.btn-sub {
+  display: block;
+  margin: 30px auto;
+	padding: 8px 40px 8px 30px;
+	text-align: center;
+	color: $colorWhite;
+	background-color: $colorGreen;
+	border: none;
+}
+
+.tb-login {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  tr {border: 2px solid #CCECFF;}
+  td {
+    padding: 3px 5px;
+    border-left: 2px solid #CCECFF;
+    height: 20px;
+  }
+  &-name {
+    width: 30%;
+    text-align: center;
+    color: $colorBlack;
+    background-color: $colorCFBlue;
+  }
+  &-text {
+    width: 60%;
+    max-width: 250px;
+    height: 22px;
+    margin-left: 10px;
+    padding: 0 10px 0;
+    text-align: left;
+	  color: $colorBlack;
+	  border: 1px solid $colorGrey;
+	  border-radius: 5px;
+	  background-color: $colorWhite;
+  }
+}
+
+/*page main menu*/
+.center {
+	display: block;
+  margin-top: 20px;
+	text-align: center;
+}
+.form-group {
+	display: block;
+  margin: 0 auto;
+  width: calc-percent(212, 409);
+  min-width: 280px;
+  max-width: 360px;
+  text-align: left;
+  label {
+		max-width: 100%;
+    vertical-align: middle;
+    font-weight: 500;
+    margin-right: 8px;
+		color: $colorGreen;
+	}
+	.form-control {
+		display: inline-block;
+    height: 18px;
+		vertical-align: middle;
+		border: 1.4px solid $colorGrey;
+    border-radius: 5px;
+    text-align: center;
+    //@include respond-to(365) {max-width: 107px;}
+    //@include respond-to(320) {max-width: 69px;}
+	}
+  .menu-input {
+    width: calc-percent(132, 232);
+    height: 25px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    word-spacing: 8px;
+  }
+}
+.menu-group-btn {
+	width: calc-percent(155, 409);
+	min-width: 250px;
+	max-width: 310px;
+	margin: 10px auto 60px auto;
+	.menu-btn {
+		width: 100%;
+		padding: 10px 0;
+		display: block;
+		margin-bottom: 15px;
+		font-size: 16px;
+    text-align: center;
+		border: none;
+		color: $colorWhite;
+    &:nth-of-type(2) {font-weight: 500;}
+	}
+	.red-btn {
+		margin-bottom: 15px;
+		background-color: $colorRed;
+	}
+	.blue-btn {background-color: $colorStrongBlue;}
+  .menu-group-sub {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto 40px;
+    .group-sub {
+      width: calc-percent(124, 279);
+      height: 7.8vw;
+      min-height: 40px;
+      max-height: 45px; 
+      margin: 0;
+      text-align: center;
+      vertical-align: middle;
+    } 
+  }
+}
+
+.blue-text {
+  font-weight: 500;
+  color: $colorStrongBlue;
+  word-spacing: 5px;
+  &-strong {font-weight: 800;}
+}
+.green-btn {
+  color: $colorWhite;
+  background-color: $colorGreen;
+  border: none;
+}
+.yellow-btn {
+  color: $colorBlack;
+  background-color: #ffff66;
+  border: 1px solid $colorGrey;
+}
+.img-flower {
+  display: block;
+  width: calc-percent(120, 409);
+  margin: 0 auto;
+  z-index: 100;
+  @include respond-to(480) {
+    width: calc-percent(108, 409);
+  }
+}
+.logo-lifeware {
+  color: $colorSBlue;
+  text-align: center;
+  font: {
+    weight: 700;
+    size: 36px;
+    style: italic;
+    family: fantasy, sinkin-sans;
+  }
+  letter-spacing: 2px;
+}
+
+.letter-space {
+  letter-spacing: 10px;
+  @include respond-to(480) {letter-spacing: 7px;}
+}
+
+//button css
+.btn-white {
+  @extend %btn-white;
+  @include btn-size($colorWhite, $colorBlack, bold);
+  &-right {
+    position: absolute;
+    right: 0%;
+    top: 2%;
+    float: right;
+  }
+}
+.btn-grey {
+  height: auto;
+  padding: 6px 18px;
+  color: $colorWhite;
+  background-color: $colorSGrey;
+  border: none;
+  @include  respond-to(480) {
+    padding: 7px 10px;
+  }
+}
+.btn-blue {
+  padding: 7px 25px;
+  color: $colorWhite;
+  border: none;
+  background-color: $colorStrongBlue; 
+}
+.btn-yellow {
+  @include btn-size(#FFFF66, $colorBlack,bold);
+}
+.btn-red {
+  @include btn-size(red, $colorWhite, normal);
+}
+/*Flex box*/
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}

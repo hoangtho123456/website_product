@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+@mixin fs($fontSize, $baseFontSize:10){
+	font-size: #{$fontSize / $baseFontSize}rem;
+}
+// example:
+// @include fs(15);
+// @include fs(20, 13);
+
+//@mixin fs($fontSize, $baseFontSize:10){
+//font-size: percentage($fontSize / $baseFontSize);
+//}
+
+
+%cf {
+	@if $support-ie6 or $support-ie7 {
+		*zoom: 1;
+	}
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+// example:
+// @extend %cf;
+
+@mixin cf{
+	@if $support-ie6 or $support-ie7 {
+		*zoom: 1;
+	}
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+// example:
+// @extend cf;
+
+
+//dang_tho
+//extend class
+%tb {
+  &-flex {
+    display: flex;
+    &-center {
+      align-items: center;
+      justify-content: center;
+    }
+    &-between {
+      @extend %tb-flex;
+      justify-content: space-between;
+    }
+  }
+}
+%bold { font-weight: bold;}
+%pos {
+  &-relative {
+    position: relative;
+  }
+  &-absolute {
+    position: absolute;
+  }
+}
+
+%txt {
+    &-center { text-align: center; }
+    &-right { text-align: right; }
+}
+
+//responsive
+@mixin respond-to($media) {
+  @media only screen and (max-width: $media + 'px') {
+    @content;
+  } 
+}
+
+//responsive minwidth
+@mixin respond-toSP($media) {
+  @media only screen and (min-width: $media + 'px')
+  and (orientation:landscape) {
+    @content;
+  }
+}
+
+//size retina
+@function calc-size($target, $unit:px) {
+  @return ($target / 2) + $unit;
+}
+
+@mixin ie() {
+  //----------------------------------------
+  @media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
+    @content;
+  }
+  //----------------------------------------
+}

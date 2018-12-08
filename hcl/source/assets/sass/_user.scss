@@ -1,0 +1,26 @@
+/*user.html*/
+.tab-user { 
+  justify-content: flex-start; 
+  li {margin-right: 4px;}
+}
+
+.tab{
+  &-content {
+    font-weight: 500;
+	  padding: 5px 3px 8px 10px;
+	  border: 2px solid #a6d2ff;
+	  border-bottom: none;  
+	  @include respond-to(480) {
+	    font-size: 13px;
+	    padding: 3px 2px 8px 7px;
+    }
+  }
+  &-btn-right {float: right;}
+  &:last-child {
+    border-bottom: 2px solid #a6d2ff;
+    margin-bottom: 10px;
+  }
+}
+#tab4 {.tab-content {height: 130px;}}
+
+

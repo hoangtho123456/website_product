@@ -1,0 +1,157 @@
+/*
+*Calendar css
+*/
+.calendar-container {
+  padding-top: 2px;
+  background-color: #efefef;
+}
+.calen-show {
+  width: 98%;
+  margin: 0 auto 8px;
+  display: inline-block;
+}
+.calen-show > table {
+  width: 100%;
+  height: auto;
+}
+.calen-show tr > td {
+  cursor: pointer;
+  width: 4%;
+  height: 25px;
+  padding-right: 3px;
+  text-align: right;
+  vertical-align: middle;
+}
+.group-select {
+  font-weight: bold;
+  color: $colorWhite;
+}
+
+/*When mouse over any cell, will show border of cell*/
+.calen-button {
+  cursor: pointer;
+  text-align: center;
+  color: #80b5d8;
+  background-color: #a9cce3;
+}
+.calen-select { 
+  font-size: 14px;
+  cursor: pointer; 
+}
+tr.calen-days > td {
+  font-size: 18px;
+  text-align: center;
+}
+
+.calendar-header {
+  width: 98%;
+  height: 40px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: $colorStrongBlue;
+
+}
+.img-calen-btn {vertical-align: middle;}
+
+/*list calendar btn*/
+.calen-list-btn {
+  display: inline-block;
+  width: 98%;
+  height: auto;
+  margin: 0 auto;
+  padding: 5px 0 5px;
+  font-size: 12px;
+  border-top: 1px solid #e3e3e3;
+  
+  /*button lay on the left*/
+  .calen-btn1 {
+    position: relative;
+    float: left;
+    width: 58px;
+    height: 36px;
+    margin-left: 5px;
+    color: $colorWhite;
+    background-color: $colorWhite;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    .lb-grey {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      display: inline-block;
+      width: calc-percent(58, 58);
+      padding: 5px 0;
+      background-color: $colorGrey;
+    }
+  }
+  
+  /*button lay on the right*/
+  .calen-btn2 {
+    float: right;
+    margin-right: 5px;
+    button {
+      width: 58px;
+      height: 36px;
+      color: $colorWhite;
+      background-color: $colorWhite;
+      border: 1px solid #e3e3e3;
+      border-radius: 5px;
+      &:first-child {
+        width: 76px;
+        vertical-align: top;
+      }
+      &:last-child {
+        position: relative;
+        margin-left: 5px;
+        .lb-white {
+          position: absolute;
+          left: 0;
+          top: 5px;
+          width: 97%;
+          padding: 5px 0;
+          color: $colorBlack;
+          background-color: $colorWhite;
+          border: 1px solid $colorBlack;
+        }
+      }
+    }
+    .lb-green {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 0;
+      background-color: $colorGreen;
+    }
+  }
+}
+
+#prev, #next {
+  vertical-align: middle;
+  cursor: pointer;
+}
+#prev {margin-left: 10px;}
+#next {margin-right: 10px;}
+
+/*popup calendar*/
+.popup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  text-align: center;
+  display: none;
+}
+.popup_content{
+  position: static;
+  margin: 12px auto;
+  max-width: 270px;
+  background: black;
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+@mixin respond-to($media) {
+  @media only screen and (max-width: $media + 'px') {
+    @content;
+  }
+}
+
+@mixin label-green () {
+	font-weight: 500;
+	color: $colorGreen;
+}
+@mixin label-blue () {
+	font-weight: 500;
+	color: $colorStrongBlue;
+}
+
+@function get-vw($width, $size) {
+  $vw-context: $width * 0.01;
+  @return ($size / $vw-context) * 1vw;
+}
+
+@mixin btn-size($bg, $color, $font) {
+  padding: 5px 10px;
+  font-weight: $font;
+  border: none;
+  background: $bg;
+  color: $color;
+}
+@mixin btn-detail($color, $bg, $bor) {
+  border: $bor;
+  border-radius: 5px;
+  color: $color;
+  background: $bg;
+}
+@mixin detail-input($pad, $align, $color, $bg) {
+  padding: $pad;
+  text-align: $align;
+  font-weight: 500;
+  color: $color;
+  background-color: $bg;
+}

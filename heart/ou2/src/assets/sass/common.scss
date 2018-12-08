@@ -1,0 +1,1234 @@
+@charset "UTF-8";
+@import "vars"; // variable
+@import "functions"; // function
+@import "reset"; // default
+@import "utilities";  // utility
+@import "layout"; // Layout
+
+// Common parts, Common component
+// Don't use id, Please use class and adding prefix .c-
+/*------------------------------------------------------------
+  Headline
+------------------------------------------------------------*/
+
+/*--------------------------------------------------
+  Component show following divice size.
+----------------------------------------------------*/
+.c {
+  //show on pc-------------------------------------
+  &-pc {
+    display: block!important;
+    //---------------------------------------------
+    @include respond-to(750) { display: none!important; }
+    //---------------------------------------------
+    &--inline {
+        display: inline-block!important;
+        @include respond-to(750) { display: none!important; }
+    }
+    //-----------------------------------
+  }
+  //show on smartphone---------------------------
+  &-sp {
+    display: none!important;
+    //-----------------------------------
+    @include respond-to(750) { display: block!important; }
+    //-----------------------------------
+    &--inline {
+        display: none!important;
+        //-----------------------------------
+        @include respond-to(750) { display: inline-block!important; }
+    }
+    //------------------------------------------
+  }
+}
+//-------------------------------------------------
+.c {
+  //----------------------------------
+  &-menuSP {
+    box-sizing: border-box;
+    top: -10px;
+    right: 10px;
+    width: 46px;
+    height: 47px;
+    padding-top: 12px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #73C3C4;
+    //--------------------
+    &__1, &__2, &__3 {
+      width: 44%;
+      height: 1px;
+      background: #73C3C4;
+      margin: 5px auto auto;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+    }
+    //---------------------------
+  }
+  //----------------------------------
+  &-menulistSP {
+    position: fixed;
+    top: 0;
+    right: -65%;
+    width: 182px;
+    height: 100%;
+    padding-top: 30px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: all ease 0.5s;
+    background: #73C3C4;
+    //----------------------------
+    &--show {
+      display: block;
+      right: 0;
+      opacity: 1;
+    }
+    //----------------------------
+    @include respond-toSP(750) {
+      display: none;
+    }
+    //----------------------------
+    li {
+      position: relative;
+    }
+    //----------------------------
+    a {
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      color: #ffffff;
+      font-size: 13px;
+      padding: 19px 29px;
+      //---------------------------
+    }
+    //-----------------------------
+  }
+  //----------------------------------
+}
+
+/*--------------------------------------------------
+  Header component
+----------------------------------------------------*/
+.c-header {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  //---------------------------------------
+  &__banner {
+    position: relative;
+    display: block;
+    //-------------------------------------
+    &--bg1 {
+      height: 830px;
+      background: url(../img/h-ban1.png) no-repeat top left;
+      background-size: cover;
+      @include respond-to(750) {
+        height: 436px;
+        background: url(../img/sp-ban1.png) no-repeat top left;
+        background-size: cover;
+      }
+    }
+    //-------------------------------------
+    &--size {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 980px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 70px;
+      right: 0;
+      //-----------------------------------
+      @include respond-to(750) {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 22px;
+      }
+      //-----------------------------------
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannerbox1 {
+    position: absolute;
+    top: 213px;
+    left: 68px;
+    // visibility: hidden;
+    // transition: visibility 1s cubic-bezier(0.215, 0.57, 0.255, 1) 0.4s;
+    //-------------------------------------
+    @include respond-to(750) {
+      top: 38px;
+      left: 22px;
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannerbox2 {
+    position: absolute;
+    bottom: -37px;
+    right: 0;
+    z-index: 1;
+    //-------------------------------------
+    @include respond-to(750) {
+      right: 22px;
+      bottom: -51px;
+      width: 84%;
+      max-width: 271px;
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannerbox1, &__bannerbox2 {
+    overflow: hidden;
+    //-------------------------------------
+    &:before {
+      content: '';
+      width: 0;
+      height: 100%;
+      background: #000;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      animation: title_mask_img cubic-bezier(0.215, 0.57, 0.255, 1) 1.4s;
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannerimg1 {
+    //-------------------------------------
+    img {
+      width: 414px;
+      height: 103px;
+      //-----------------------------------
+      @include respond-to(750) {
+        width: 252px;
+        height: 63px;
+      }
+      //-----------------------------------
+    }
+    //-------------------------------------
+    &--mb1 {
+      margin-bottom: 21px;
+      //-----------------------------------
+      @include respond-to(750) { margin-bottom: 9px; }
+      //-----------------------------------
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannerimg2 {
+    //-------------------------------------
+    img {
+      width: 410px;
+      height: 99px;
+      //-----------------------------------
+      @include respond-to(750) {
+        width: 250px;
+        height: 60px;
+      }
+      //-----------------------------------
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+  &__bannertext1 {
+    background: #000;
+    color: #fff;
+    text-align: left;
+    line-height: 2.1;
+    padding: 16px 17px 23px 30px;
+    //-------------------------------------
+    @include respond-to(750) {
+      padding: 13px 13px;
+      line-height: 1.6;
+    }
+    //-------------------------------------
+  }
+  //---------------------------------------
+}
+
+/*-----------------------------------------
+  btn component
+-----------------------------------------*/
+.c-btn1 {
+  display: inline-block;
+  //---------------------------------
+  a { display: block; }
+  //---------------------------------
+}
+
+/*----------------------------------------
+  Text Advance component
+----------------------------------------*/
+.c-advance1 {
+  position: relative;
+  //--------------------------------------
+  &__title1 {
+    //------------------------------------
+    &--pos1 {
+      position: absolute!important;
+      top: 28px;
+      //----------------------------------
+      @include respond-to(750) {
+        top: -293px;
+      }
+      //----------------------------------
+    }
+    //------------------------------------
+    &--pos2 {
+      position: absolute!important;
+      top: -14px;
+      right: 82px;
+      //----------------------------------
+      @include respond-to(750) {
+        top: -287px;
+        right: unset;
+        left: 0;
+      }
+      //----------------------------------
+    }
+    //------------------------------------
+    &--pos3 {
+      position: absolute!important;
+      top: 5px;
+      //----------------------------------
+      @include respond-to(750) {
+        top: -289px;
+        left: 0;
+      }
+      //----------------------------------
+    }
+    //------------------------------------
+    &__img {
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+      padding-bottom: 19px;
+      //-------------------------------
+      @include respond-to(750) {
+        padding-bottom: 29px;
+      }
+      //-------------------------------
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        bottom: 0;
+        background: url(../img/i-adbotline.svg) no-repeat;
+        //-------------------------------
+        @include respond-to(750) {
+          background: url(../img/sp-adbotline.svg) no-repeat;
+        }
+        //-------------------------------
+      }
+      //---------------------------------
+      img {
+        width: 243px;
+        height: 70px;
+        //-------------------------------
+        @include respond-to(750) {
+          width: 185px;
+          height: 35px;
+          transform: rotate(0deg);
+        }
+        //-------------------------------
+      }
+      //---------------------------------
+    }
+    //---------------------------------
+  }
+  //---------------------------------
+  &__box1 {
+    text-align: justify;
+    z-index: 2;
+    //-------------------------------
+    @include respond-to(750) {
+      box-sizing: border-box;
+      width: 97%;
+      max-width: 400px;
+    }
+    //-------------------------------
+    &--pos1 {
+      position: absolute;
+      right: 42%;
+      //-----------------------------
+      @include respond-to(750) {
+        position: relative;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+      //-----------------------------
+    }
+    //-------------------------------
+    &--pos2 {
+      position: absolute;
+      left: 40%;
+      top: 74px;
+      margin-left: -9px;
+      //-----------------------------
+      @include respond-to(750) {
+        position: relative;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+      //-------------------------------
+    }
+    //-------------------------------
+    &--mainmtb1 {
+      margin: 97px 0 0 42px;
+      //-------------------------------
+      @include respond-to(750) {
+        margin: 317px auto 0 auto;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &--mainmtb2 {
+      margin: 55px 0 0 42px;
+      //-------------------------------
+      @include respond-to(750) {
+        margin: 232px auto 0 auto;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &--mainmtb3 {
+      margin: 71px 0 0 57px;
+      //------------------------------
+      @include respond-to(750) {
+        margin: 303px auto 0 auto;
+      }
+      //------------------------------
+    }
+    //-------------------------------
+    &__img1 {
+      text-align: center;
+      //------------------------------
+      @include respond-to(750) {
+        width: 100%;
+      }
+      //-----------------------------
+      img {
+        width: 416px;
+        height: 301px;
+        margin: 0 auto;
+        //---------------------------
+        @include respond-to(750) {
+          width: 100%;
+          height: auto;
+        }
+        //---------------------------
+      }
+      //-----------------------------
+    }
+    //-------------------------------
+    &__img2 {
+      text-align: center;
+      //-----------------------------
+      @include respond-to(750) {
+        width: 100%;
+      }
+      //-----------------------------
+      img {
+        width: 388px;
+        height: 256px;
+        margin: 0 auto;
+        //---------------------------
+        @include respond-to(750) {
+          width: 100%;
+          height: auto;
+        }
+        //---------------------------
+      }
+      //-----------------------------
+    }
+    //-------------------------------
+  }
+  //---------------------------------
+  &__box2 {
+    position: absolute;
+    width: 45%;
+    height: 653px;
+    z-index: 0;
+    overflow: hidden;
+    //-------------------------------
+    @include respond-to(750) {
+      width: 89%;
+      max-width: 400px;
+      height: 252px;
+      margin: 0 auto;
+    }
+    //------------------------------
+    &--size1 {
+      height: 663px;
+      //----------------------------
+      @include respond-to(750) {
+        height: 250px
+      }
+      //----------------------------
+    }
+    //------------------------------
+    &--pos1 {
+      top: 92px;
+      right: 0;
+      //----------------------------
+      @include respond-to(750) {
+        top: 148px;
+        left: 0;
+      }
+      //----------------------------
+    }
+    //------------------------------
+    &--pos2 {
+      left: 0;
+      top: -97px;
+      //----------------------------
+      @include respond-to(750) {
+        top: 103px;
+        right: 0;
+      }
+      //----------------------------
+    }
+    //------------------------------
+    &--pos3 {
+      right: 0;
+      top: -82px;
+      @include respond-to(750) {
+        top: 98px;
+        left: 0;
+      }
+    }
+    //------------------------------
+    &--bg1 {
+      background: url(../img/i-img1.png) no-repeat;
+      background-size: cover;
+      height: 100%;
+      transition: opacity 1.5s cubic-bezier(0.215, 0.57, 0.255, 1);
+      //----------------------------
+      @include respond-to(750) {
+        background: url(../img/sp-img1.png) no-repeat;
+        background-size: cover;
+      }
+      //----------------------------
+    }
+    //------------------------------
+    &--bg2 {
+      background: url(../img/i-img2.png) no-repeat;
+      background-size: cover;
+      height: 100%;
+      transition: opacity 1.5s cubic-bezier(0.215, 0.57, 0.255, 1);
+      //----------------------------
+      @include respond-to(750) {
+        background: url(../img/sp-img2.png) no-repeat;
+        background-size: cover;
+      }
+      //----------------------------
+    }
+    //------------------------------
+    &--bg3 {
+      background: url(../img/i-img3.png) no-repeat;
+      background-size: cover;
+      height: 100%;
+      transition: opacity 1.5s cubic-bezier(0.215, 0.57, 0.255, 1);
+      //----------------------------
+      @include respond-to(750) {
+        background: url(../img/sp-img3.png) no-repeat;
+        background-size: cover;
+      }
+      //----------------------------
+    }
+    //------------------------------
+  }
+  //--------------------------------
+  &__boxinfo1 {
+    width: 606px;
+    box-sizing: border-box;
+    padding: 63px 60px 60px 48px;
+    background: #fff;
+    //------------------------------
+    @include respond-to(750) {
+      width: 85%;
+      padding: 27px 25px 30px;
+    }
+    //-----------------------------
+    h3 {
+      font-size: 28px;
+      line-height: 1.5;
+      //---------------------------
+      @include respond-to(750) {
+        font-size: 15px;
+      }
+      //---------------------------
+    }
+    //-----------------------------
+    &--mb1 {
+      margin-bottom: 22px;
+    }
+    //-----------------------------
+    &--pb1 {
+      padding-bottom: 90px;
+      //---------------------------
+      @include respond-to(750) {
+        padding-bottom: 29px;
+      }
+      //---------------------------
+    }
+    //-----------------------------
+  }
+  //-------------------------------
+  &__text1 {
+    font-size: 15px;
+    line-height: 1.8;
+    //-----------------------------
+    @include respond-to(750) {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    //-----------------------------
+    &--mb1 {
+      margin-bottom: 24px;
+    }
+    //-------------------------------
+    &--mb2 {
+      margin-bottom: 39px;
+    }
+    //-------------------------------
+    &--mb3 {
+      margin-bottom: 41px;
+      //-----------------------------
+      @include respond-to(750) {
+        margin-bottom: 27px;
+      }
+      //-----------------------------
+    }
+    //-------------------------------
+  }
+  //---------------------------------
+}
+
+/*----------------------------------------
+  Big text component
+----------------------------------------*/
+.c-bigtext1 {
+  //-------------------------------------
+  &--pos1 {
+    position: absolute;
+    bottom: -42px;
+    left: 61%;
+    //-----------------------------------
+    @include respond-to(750) {
+      bottom: -6px;
+      left: 0;
+      right: 0;
+    }
+    //-----------------------------------
+  }
+  //-------------------------------------
+  &--pos2 {
+    position: absolute;
+    bottom: -40px;
+    right: 61%;
+    //-----------------------------------
+    @include respond-to(750) {
+      bottom: -6px;
+      left: 0;
+      right: 0;
+    }
+    //-----------------------------------
+  }
+  //-------------------------------------
+  &__img {
+    //-----------------------------------
+    img {
+      width: 285px;
+      height: 286px;
+      //---------------------------------
+      @include respond-to(750) {
+        width: 267px;
+        height: auto;
+      }
+      //---------------------------------
+    }
+    //-----------------------------------
+  }
+  //-------------------------------------
+  &__linebot {
+    //-----------------------------------
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 42px;
+      margin-top: 42px;
+      background: url(../img/i-linebot1.svg) no-repeat;
+      //---------------------------------
+      @include respond-to(750) {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+      //---------------------------------
+    }
+    //-----------------------------------
+  }
+  //-------------------------------------
+}
+
+/*---------------------------------------
+  List component
+---------------------------------------*/
+.c-list1 {
+  display: flex;
+  justify-content: space-between;
+  //-------------------------------------
+  &__card {
+    position: relative;
+  }
+  //-------------------------------------
+}
+
+/*---------------------------------------
+  footer component
+---------------------------------------*/
+.c-footer {
+  position: relative;
+  padding: 33px 0 45px;
+  //-----------------------------------
+  @include respond-to(750) {
+    padding: 33px 25px 21px;
+  }
+  //-----------------------------------
+  &__listlink1 {
+    //---------------------------------
+    a {
+      display: block;
+      color: #393C45;
+      text-decoration: none;
+      letter-spacing: 2px;
+      //-------------------------------
+      @include respond-to(750) {
+        font-size: 13px;
+      }
+      //-------------------------------
+      &:hover { color: #B18021; }
+      //-------------------------------
+    }
+    //---------------------------------
+    li {
+      margin-bottom: 4px;
+      text-align: left;
+      font-size: 16px;
+      letter-spacing: 2px;
+      color: #393C45;
+      //-------------------------------
+      @include respond-to(750) {
+        font-size: 13px;
+      }
+      //-------------------------------
+      @include respond-to(750) {
+        margin-bottom: 17px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &--mr1 {
+      margin-right: 58px;
+      //-------------------------------
+      @include respond-to(750) {
+        margin-right: 0;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+  &__imglogo1 {
+    //---------------------------------
+    img {
+      width: 258px;
+      height: 62px;
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+  &__boxlogo1 {
+    text-align: left;
+    //---------------------------------
+    &--mar1 {
+      margin-right: -14px;
+      //-------------------------------
+      @include respond-to(750) {
+        margin-right: 0;
+        margin-top: 6px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+  &__contact1 {
+    font-size: 13px;
+    text-align:  left;
+    line-height: 1.8;
+    //---------------------------------
+    @include respond-to(750) {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    //---------------------------------
+    &--mt1 {margin-top: 4px; }
+    //---------------------------------
+  }
+  //-----------------------------------
+  &__list1 {
+    @include respond-to(750) {
+      max-width: 276px;
+      margin: 0 auto;
+      //-------------------------------
+      &>.c-list1 { flex-wrap: wrap; }
+      //-------------------------------
+    }
+    //---------------------------------
+    &--mb1 {
+      margin-bottom: 51px;
+      //-------------------------------
+      @include respond-to(750) {
+        margin-bottom: 33px;
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+  &__list2 {
+    @include respond-to(750) {
+      max-width: 400px;
+      margin: 0 auto;
+      &>.c-list1 { display: block; }
+    }
+  }
+  //-----------------------------------
+  &__card1 {
+    position: relative;
+    //---------------------------------
+    &--mb1 {
+      margin-bottom: 33px;
+    }
+    //---------------------------------
+    &__img1 {
+      //-------------------------------
+      @include respond-to(750) {
+        width: 100%;
+      }
+      //-------------------------------
+      img {
+        width: 236px;
+        height: 76px;
+        //-----------------------------
+        @include respond-to(750) {
+          width: 100%;
+          height: 100%;
+        }
+        //-----------------------------
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__info {
+      text-align: left;
+      padding-top: 11px;
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+}
+
+/*--------------------------------------------------
+  List component of index.html
+----------------------------------------------------*/
+.c {
+  //------------------------------------
+  &-listtop1 {
+    //----------------------------------
+    &__card {
+      box-sizing: border-box;
+      width: 326px;
+      border: 1px solid #ccc;
+      //--------------------------------
+      @include respond-to(750) {
+        width: 50%;
+        border-right: none;
+        border-bottom: none;
+        //------------------------------
+        &:nth-child(2n) {
+          border-right: 1px solid #ccc;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__linebot1SP {
+      //--------------------------------
+      @include respond-to(750) {
+        border-bottom: 1px solid #ccc!important;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__img1 {
+      //--------------------------------
+      img {
+        width: 62px;
+        height: 60px;
+        //------------------------------
+        @include respond-to(750) {
+          width: 32px;
+          height: 30px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__img2 {
+      //--------------------------------
+      img {
+        width: 64px;
+        height: 102px;
+        //------------------------------
+        @include respond-to(750) {
+          width: 32px;
+          height: 50px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__info {
+      //--------------------------------
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        //------------------------------
+        @include respond-to(750) {
+          font-size: 15px;
+        }
+        //------------------------------
+      }
+      //mtb1 use for childs of clas info
+      &--mtb1 {
+        margin: 43px 0 41px;
+        //------------------------------
+        @include respond-to(750) {
+          margin: 17px 0 21px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+      &--mtb2 {
+        margin: 21px 0 42px;
+        //------------------------------
+        @include respond-to(750) {
+          margin: 17px 0 21px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__text1 {
+      font-size: 17px;
+      text-align: justify;
+      //--------------------------------
+      @include respond-to(750) {
+        font-size: 12px;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__link {
+      box-sizing: border-box;
+      display: block;
+      height: 321px;
+      padding: 70px 30px 30px 30px;
+      text-decoration: none;
+      color: #000;
+      //--------------------------------
+      @include respond-to(750) {
+        height: 100%;
+        padding: 25px 21px 16px;
+      }
+      //--------------------------------
+      &--pt1 {
+        padding-top: 50px;
+        //------------------------------
+        @include respond-to(750) {
+          padding-top: 25px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+  }
+  //------------------------------------
+  &-listtop2 {
+    //----------------------------------
+    &__card {
+      box-sizing: border-box;
+      width: 20%;
+      border: 1px solid #ccc;
+      //--------------------------------
+      @include respond-to(750) {
+        width: 50%;
+        border-right: none;
+        border-bottom: none;
+        //------------------------------
+        &:nth-child(2n) {
+          border-right: 1px solid #ccc;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__img1 {
+      //--------------------------------
+      img {
+        width: 62px;
+        height: 60px;
+        //------------------------------
+        @include respond-to(750) {
+          width: 32px;
+          height: 30px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__info {
+      //--------------------------------
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: -2px;
+        //------------------------------
+        @include respond-to(750) {
+          font-size: 15px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+      &--mtb1 {
+        margin: 33px 0 17px;
+        //------------------------------
+        @include respond-to(750) {
+          margin: 17px 0 21px;
+        }
+        //------------------------------
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__text1 {
+      font-size: 17px;
+      text-align: left;
+      letter-spacing: -2px;
+      //--------------------------------
+      @include respond-to(750) {
+        font-size: 12px;
+        letter-spacing: 0;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+    &__link {
+      box-sizing: border-box;
+      display: block;
+      height: 289px;
+      padding: 44px 30px 30px 30px;
+      text-decoration: none;
+      color: #000;
+      //--------------------------------
+      @include respond-to(750) {
+        height: 100%;
+        padding: 25px 21px 16px;
+      }
+      //--------------------------------
+    }
+    //----------------------------------
+  }
+  //------------------------------------
+}
+
+/*--------------------------------------------------
+  Index's component
+----------------------------------------------------*/
+.c {
+  //-----------------------------------
+  &-top5 {
+    //---------------------------------
+    &__case1 {
+      width: 178px;
+      padding: 15px 0;
+      box-sizing: border-box;
+      text-align: center;
+      font-family: 游ゴシック, YuGothic;
+      font-size: 22px;
+      font-weight: bold;
+      //--------------------------------
+      @include respond-to(750) {
+        width: 36%;
+        padding: 11px 5px;
+        font-size: 13px;
+      }
+      //--------------------------------
+      &--bg1 { background: #ebe0ca; }
+      //--------------------------------
+      &--bg2 { background: #cdae73; }
+      //--------------------------------
+      &--color1 { color: #fff; }
+      //--------------------------------
+    }
+    //---------------------------------
+    &__talk1 {
+      width: 223px;
+      text-align: left;
+      padding: 15px 0;
+      font-size: 19px;
+      position: relative;
+      //-------------------------------
+      @include respond-to(750) {
+        box-sizing: border-box;
+        display: flex;
+        width: 62%;
+        padding: 11px 20px;
+        font-size: 11px;
+      }
+      //-------------------------------
+      &--bg1 {
+        position: absolute;
+        top: 0;
+        //-----------------------------
+        @include respond-to(750) {
+          left: 0;
+          width: 100%;
+          height: 100%;
+          //---------------------------
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          //---------------------------
+        }
+      }
+      //-------------------------------
+      &--ml1 {
+        margin-left: 75px;
+        @include respond-to(750) {
+          margin: 0 auto;
+        }
+      }
+      //-------------------------------
+      &--ml2 {
+        margin-left: 44px;
+        @include respond-to(750) {
+          margin: 0 auto;
+        }
+      }
+      //-------------------------------
+    }
+    //---------------------------------
+    &__adsbox1 {
+      width: 421px;
+      margin: 0 auto;
+      @include respond-to(750) { width: auto; }
+    }
+    //---------------------------------
+    &__line1 {
+      border: 0.5px dashed #808080;
+      margin: 32px 0 30px;
+      @include respond-to(750) {
+        margin: 17px 0;
+      }
+    }
+    //---------------------------------
+  }
+  //-----------------------------------
+}
+
+/*--------------------------------------------------
+  Animation link component
+----------------------------------------------------*/
+.c-link {
+  //--------------------------------------
+  &--hasurl {
+    position: relative;
+    transition: all 0.3s;
+    //------------------------------------
+    &::after {
+      transition: all 0.3s;
+    }
+    //------------------------------------
+    &::after {
+      background: rgba(177, 128, 33, 0.58);
+      content: '';
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 0;
+    }
+    //------------------------------------
+    &:hover {
+      color: #000;
+    }
+    //------------------------------------
+    &:hover:after {
+      width: 100%;
+    }
+    //------------------------------------
+  }
+  //--------------------------------------
+}
+
+/*----------------------------------------
+  Small Square Component
+----------------------------------------*/
+.c-square1 {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  display: block;
+  //----------------------------------
+  @include respond-to(750) {
+    width: 8px;
+    height: 8px;
+  }
+  //----------------------------------
+  &--pos1 {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    background: #B18021;
+    z-index: 1;
+    //--------------------------------
+    @include respond-to(750) {
+      bottom: -5px;
+      right: -5px;
+    }
+    //--------------------------------
+  }
+  //----------------------------------
+}

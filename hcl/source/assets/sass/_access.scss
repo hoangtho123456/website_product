@@ -1,0 +1,229 @@
+/*
+*access.html
+*/
+
+.label-calen {
+  border: none;
+  vertical-align: middle;
+  padding: 0;
+  background-color: $colorWhite;
+}
+
+img.img-calendar {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+//list button
+.access-box {
+  position: absolute;
+  left: 1.5%;
+  display: inline-block;
+  margin-top: 14px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #c00000;
+  //background-color: #c00000;
+}
+.bg-active {background-color: #CC3300;}
+.access-list-btn {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+  li {
+    &:first-child {
+      width: calc-percent(180, 306);
+      display: flex;
+      @extend %tb-flex-center;
+      align-items: center;
+      padding-left: 5px;
+      label {
+        width: calc-percent(155-110-7.5, 155);
+        font-weight: 500;
+        color: $colorGreen;
+        margin-right: 4%;
+        text-align: right;
+        @include respond-to(340) {
+          width: calc-percent(155-100-7.5, 155);
+        }
+      }
+      .form-control {
+        width: calc-percent(98, 155);
+        height: 4.5vw;
+        max-height: 25px;
+        min-height: 20px;
+        vertical-align: middle;
+        text-align: center;
+        margin-right: 3%;
+        border: 1.4px solid $colorGrey;
+        border-radius: 5px;
+        @include respond-to(480) {
+          width: calc-percent(79, 155);
+        }
+      }
+      .input-bg {
+        background-color: $colorYellow;
+      }
+      button {
+        width: calc-percent(20, 164);
+        @include respond-to(480) {
+          width: calc-percent(18, 164);
+          min-width: 25px;
+        }
+      }
+    }
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      width: calc-percent(32, 306);
+    }
+    .access-btn {
+      width: 100%;
+      max-height: 30px;
+      height: 5.4vw;
+      min-height: 25px;
+      color: #ffffff;
+      background-color: $colorSGrey;
+      border: none;
+      @include respond-to(480) {
+        padding: 5px;
+      }
+    }
+    &:nth-of-type(3) {
+      width: calc-percent(40, 306);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.left-box {
+  float: left;
+  padding-left: 5px;
+}
+
+.right-box {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .btn-blue {
+    margin-left: 5px;
+  }
+}
+
+.dl-info-access {
+  padding: 5px 0;
+  font-size: 14px;
+  border: 1px solid #D9ECFF;
+  dl {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 0px 30px;
+  }
+  dt {
+    width: calc-percent(76, 302);
+    display: flex;
+    justify-content: space-between;
+    @include respond-to(480) {
+      width: calc-percent(92, 302);
+    }
+  }
+  dd {
+    display: flex;
+    justify-content: space-between;
+    width: calc-percent(206, 302);
+  }
+  .dd-last {
+    width: calc-percent(7, 302);
+    padding-right: 5px;
+    font-weight: 900;
+  }
+}
+
+.dl-top {
+  margin-top: 5px;
+}
+
+.dl-focus {
+  background-color: #d9ecff;
+}
+
+.text-blue {
+  color: $colorStrongBlue;
+  font-weight: 550;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0 5px;
+}
+
+.btn-white1 {
+  height: auto;
+  padding: 5px 18px;
+  color: $colorGrey;
+  background-color: $colorWhite;
+  border: 1px solid $colorGrey;
+  display: inline-block;
+  @include respond-to(480) {
+    padding: 6px 10px;
+  }
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.cb_item {
+  margin-top: 19px;
+  margin-left: 5px;
+}
+
+//track box
+.track-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc-percent(242, 293);
+  float: right;
+  margin-bottom: 8px;
+  @include respond-to(480) {
+    width: calc-percent(232, 293);
+  }
+  li {
+    &:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc-percent(117, 293);
+      height: 7.4vw;
+      max-height: 30px;
+      min-height: 28px;
+      color: $colorWhite;
+      @extend %btn-red;
+      @include respond-to(480) {
+        width: calc-percent(99, 293);
+      }
+    }
+    &:last-child {
+      width: calc-percent(57, 293);
+      height: 7.4vw;
+      max-height: 30px;
+      min-height: 26px;
+      @extend %btn-blue;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: $colorWhite;
+    }
+  }
+}
