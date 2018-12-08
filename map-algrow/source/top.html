@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta content="ja" http-equiv="Content-Language">
+  <meta content="text/css" http-equiv="Content-Style-Type">
+  <meta content="text/javascript" http-equiv="Content-Script-Type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>マップ</title>
+  <link type="text/css" rel="stylesheet" href="./assets/css/main.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/jquery-ui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="inner header-content">
+      <img class="child-crowd" src="assets/images/世界の国データベース.jpg" alt="child_crowd">
+      <div class="header-title">
+        <p><ruby><rb>世</rb><rt>せ</rt></ruby><ruby><rb>界</rb><rt>かい</rt></ruby>の<ruby><rb>国</rb><rt>くに</rt></ruby>データベース</p>
+      </div>
+    </div>
+  </header>
+  <div class="page2-inner page2-top">
+    <div class="map-news">
+      <div class="map-info">
+        <p class="map-news-title">お知らせ</p>
+        <dl>
+          <dt>2018/3/20</dt>
+          <dd>世界の国データベースを公開いたしました。</dd>
+        </dl>
+        <dl>
+          <dt>2018/3/20</dt>
+          <dd>世界の国データベースを公開いたしました。</dd>
+        </dl>
+        <dl>
+          <dt>2018/3/20</dt>
+          <dd>世界の国データベースを公開いたしました。</dd>
+        </dl>
+        <dl>
+          <dt>2018/3/20</dt>
+          <dd>世界の国データベースを公開いたしました。</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="map-text-na">
+      <ruby>国<rt>くに</rt>調<rt>しら</rt>べに<rt></rt>使<rt>つか</rt></ruby>えるワークシートはこちら→<a href="">ワークシート</a>
+      <img class="pdf-img" src="assets/images/s512_f_object_154_1nbg.png" alt="pdf file">
+    </p>
+    <div class="map-group">
+      <div class="map-group-radio map-group-radio-js">
+        <label class="map-group-check">
+          <ruby><rb>州</rb><rt>しゅう</rt>から<rt></rt>選<rt>えら</rt>ぶ</ruby>
+          <input id="in-radio-1" type="radio" name="ra" value="">
+          <span class="checkmark checkra"></span>
+        </label>
+        <div class="map-group-ra">
+          <div class="select1">
+            <label>
+              <ruby><rb>州</rb><rt>しゅう</rt></ruby>
+            </label>
+            <!--<br>-->
+            <select class="select1-js" id="continents"></select>
+          </div>
+          <div class="select1">
+            <label>
+              <ruby><rb>国</rb><rt>くに</rt><rb>や</rb><rt></rt><rb>地</rb><rt>ち</rt>域<rt>いき</rt></ruby>
+            </label>
+            <!--<br>-->
+            <select class="select1-js" id="nations"></select>
+          </div>
+        </div>
+      </div>
+      <div class="map-group-search map-group-radio-js">
+        <label class="map-group-check">
+          <ruby>名<rt>な</rt>前<rt>まえ</rt>を<rt></rt>入<rt>い</rt>れて<rt></rt>選<rt>えら</rt>ぶ</ruby>
+            <input id="in-radio-2" type="radio" name="ra" value="" />
+            <span class="checkmark checkra"></span>
+        </label>
+        <div class="map-group-input">
+          <input class="input-search select2-js" type="text" name="" id="search" value="" placeholder="入力">
+        </div>
+      </div>
+    </div>
+    <div class="map-group-box map-group-check-js">
+      <h3 class="map-news-title"><ruby>
+        調<rt>しら</rt>べる<rt></rt>項<rt>こう</rt>目<rt>もく</rt>
+      </ruby></h3>
+      <div class="flex none-flex">
+        <ul>
+          <li>
+            <label class="map-group-check">
+              <ruby>州<rt>しゅう</rt></ruby>
+              <input id="data_check1" type="checkbox" name="check" value="州">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>首<rt>しゅ</rt>都<rt>と</rt></ruby>
+              <input id="data_check2" type="checkbox" name="check" value="首都">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check"><ruby>面<rt>めん</rt>積<rt>せき</rt></ruby>
+              <input id="data_check3" type="checkbox" name="check" value="面積">
+              <span class="checkmark"></span>
+            </label>    
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>人<rt>じん</rt>口<rt>こう</rt>
+              </ruby>
+              <input id="data_check4" type="checkbox" name="check" value="人口">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>平<rt>へい</rt>均<rt>きん</rt>寿<rt>じゅ</rt>命<rt>みょう</rt></ruby>
+              <input id="data_check5" type="checkbox" name="check" value="平均寿命">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label class="map-group-check">
+              <ruby>主<rt>おも</rt>な<rt></rt>言<rt>げん</rt>語<rt>ご</rt></ruby>
+              <input id="data_check6" type="checkbox" name="check" value="主な言語">
+              <span class="checkmark"></span>
+            </label>    
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>主<rt>おも</rt>な<rt></rt>宗<rt>しゅう</rt>教<rt>きょう</rt></ruby>
+              <input id="data_check14" type="checkbox" name="check" value="主な宗教">
+              <span class="checkmark"></span>
+            </label>  
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>通<rt>つう</rt>貨<rt>か</rt></ruby>
+              <input id="data_check8" type="checkbox" name="check" value="通貨">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>代<rt>だい</rt>表<rt>ひょう</rt>的<rt>てき</rt>な<rt></rt>料<rt>りょう</rt>理<rt>り</rt></ruby>
+              <input id="data_check9" type="checkbox" name="check" value="伝統的な料理">
+              <span class="checkmark"></span>
+            </label>    
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <label class="map-group-check">
+              <ruby>世<rt>せ</rt>界<rt>かい</rt>遺<rt>い</rt>産<rt>さん</rt>登<rt>とう</rt>録<rt>ろく</rt>数<rt>すう</rt>、<rt></rt>主<rt>おも</rt>な<rt></rt>世<rt>せ</rt>界<rt>かい</rt>遺<rt>い</rt>産<rt>さん</rt></ruby>
+              <input id="data_check10" type="checkbox" name="check" value="さかんなスポーツや国技">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>過<rt>か</rt>去<rt>こ</rt></ruby>のオリンピック<ruby>開<rt>かい</rt></ruby><ruby>催<rt>さい</rt>都<rt>と</rt>市<rt>し</rt></ruby>
+              <input id="data_check11" type="checkbox" name="check" value="過去のオリンピック開催都市">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>2016<rt></rt>年<rt>ねん</rt></ruby>リオオリンピックでのかくとくメダル<ruby>数<rt>すう</rt></ruby>
+              <input id="data_check12" type="checkbox" name="check" value="2016年リオオリンピックでのメダルかくとく数">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+          <li>
+            <label class="map-group-check">
+              <ruby>国<rt>こっ</rt>旗<rt>き</rt>（<rt></rt>地<rt>ち</rt>域<rt>いき</rt>の<rt></rt>旗<rt>はた</rt>）について</ruby>
+              <input id="data_check7" type="checkbox" name="check" value="国・地域の旗について">
+              <span class="checkmark"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <button class="btn-submit btn-submit-js">
+        <ruby>調<rt>しら</rt>べる</ruby>
+      </button>
+    </div>
+  </div>
+  <div class="login-footer">
+    <a class="login-footer-link" href="http://www.sing.co.jp/" target="blank">
+      <img class="login-footer-logo" src="assets/images/gyuto.png" alt="gyuto">
+    </a>
+    <p>Copyright (C) 2018 Shingakusha Co., Ltd. All Rights Reserved.</p>
+  </div>
+  <script src="./assets/js/jquery-3.2.1.min.js"></script>
+  <script src="./assets/js/jquery.js"></script>
+  <script src="./assets/js/jquery-ui.min.js"></script>
+  <script src="./assets/js/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="./assets/js/access.js"></script>
+  <script type="text/javascript" src="./assets/js/js.js"></script>
+  <script type="text/javascript" src="./assets/js/behavior.js"></script>
+</body>
+
+</html>
