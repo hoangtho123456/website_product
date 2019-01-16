@@ -151,21 +151,19 @@ function showListInfo() {
       COUNTRY_NAME.css({'padding': '5px 10px', 'border': '2px solid black'});
       var nameSlice = sliceNationName(sessionStorage.getItem("nation"));
 
-      FLAG.attr('src', "assets/images/" + "国旗データ" + "/" 
+      FLAG.attr('src', "assets/images/" + "国旗データ" + "/"
            + sessionStorage.getItem("continentsName") + "/"
-           + sessionStorage.getItem("stt") /*sessionStorage.getItem("nation")*/ + nameSlice + ".png" );
-     /*console.log("assets/images/" + "国旗データ" + "/" + sessionStorage.getItem("continentsName") + "/"
-           + sessionStorage.getItem("stt") + nameSlice + ".png");*/
+           + sessionStorage.getItem("stt") + nameSlice + ".png" );
       FLAG.css({
         'display': 'block'
       });
     }
-    
+
     //if nation has not card, hide link
     if (sessionStorage.getItem('card-nation') === 'undefined') {
       $('#card_down').css({'visibility': 'hidden'});
     }
-    
+
     for (var i = 0; i < LIST_INFO.length; i++) {
       switch(LIST_INFO.eq(i).data('tit')) {
         case '州':
@@ -225,12 +223,12 @@ function sliceNationName (nationName) {
       var nameVer = nameDemo.slice(0, indexHiri);
       var nameVerSub1 = nameVer.slice(0, circleChar);
       var nameVerSub2 = nameVer.slice(circleChar + 1);
-      nameSlice = nameVerSub1 + nameVerSub2; 
+      nameSlice = nameVerSub1 + nameVerSub2;
     }
   } else {
     nameSlice = nameDemo;
   }
-  return nameSlice; 
+  return nameSlice;
 }
 
 /*
@@ -238,7 +236,7 @@ function sliceNationName (nationName) {
 *Action: covert text higarana from normal text to html ruby tag
 */
 function sliceDataRub(dataText) {
-  var str = dataText; 
+  var str = dataText;
   var re = str.replace(/(◎)([\u3000-\u303F]+|[\u3040-\u309F]+|[\u30A0-\u30FF]+|[\uFF00-\uFFEF]+|[\u4E00-\u9FAF]+|[\u2605-\u2606]+|[\u2190-\u2195]+|\u203B+)【【([\u3000-\u303F]+|[\u3040-\u309F]+|[\u30A0-\u30FF]+|[\uFF00-\uFFEF]+|[\u4E00-\u9FAF]+|[\u2605-\u2606]+|[\u2190-\u2195]+|\u203B+)】】/g, function (x) {
       var ruby = x.replace('◎','<ruby>');
       var rt = ruby.replace('【【', '<rt>');

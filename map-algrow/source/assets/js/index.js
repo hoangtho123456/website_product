@@ -9,7 +9,7 @@ const ZIPCODE = "singwrd18";
 var IN_SITE = ''; //set permission for user, dont permit user accesses directly to sub layout, except index.html
 
 if(typeof(Storage) !== 'undefined') {
-  IN_SITE = sessionStorage.setItem('inSite','false'); 
+  IN_SITE = sessionStorage.setItem('inSite','false');
 } else {
   alert("browser doesn't support Storage!");
 }
@@ -21,7 +21,7 @@ var BTN_LOGIN = $(".btn-login-js");
 $(BTN_LOGIN).on('click', function () {
   if (typeof(Storage) !== 'undefined') {
     var temp = INPUT_CODE.val();
-  
+
     if (ZIPCODE === temp) {
   	  IN_SITE = sessionStorage.setItem('inSite','true');
       window.open('top.html', '_self');

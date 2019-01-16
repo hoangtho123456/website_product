@@ -33,12 +33,11 @@ oReq.responseType = "arraybuffer";
 
 oReq.onload = function() {
   //if login success, will show layout, if not, dont show anything!
-  //$('body').css('display', 'block');
   var arraybuffer = oReq.response;
 
   var data = new Uint8Array(arraybuffer);
   var workbook = XLSX.read(data, { type: "array" });
-  
+
   //get list data nations follow sheet name.
   workbook.SheetNames.forEach(function(sheetName) {
     var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
@@ -54,14 +53,14 @@ oReq.onload = function() {
   clickSelect(keyName);
   
   /*
-   *click pick any continents will show corresponding data nation
+   *Searching info the country name following data was entered in input
    */
   $(NATION_SEARCH).autocomplete({
     source: function (request, response) {
       var matcher = new RegExp("^" + $.ui.autocomplete.escapeRegex(request.term), "i");
       response( $.grep(arr, function(item) {
         return matcher.test(item);
-      }) );
+      }));
     },
     minLength: 0
   });
@@ -174,7 +173,7 @@ function clickSelect(keyName) {
   for (var i = 0; i < keyName.length; i++) {
     CONTINENTS.append("<option value='" + keyName[i] + "'>" + keyName[i] + "</option>");
   }
-  var item = CONTINENTS.val(); 
+  var item = CONTINENTS.val();
   for (var key in RESULT) {
     if (RESULT.hasOwnProperty(key)) {
       //show list nation names following current continent when page loaded
@@ -186,7 +185,7 @@ function clickSelect(keyName) {
         }
         if (RESULT[key][i][1] !== undefined) {
           arr.push(RESULT[key][i][1]);
-        } 
+        }
       }
     }
   }
