@@ -1,0 +1,28 @@
+#footer {
+	@include gradient(bottom,transparent,#636466); 
+	.info {
+		color: #9B9EA4;
+		.key { color: #fff; } 
+	}
+	.social {
+		a { 
+			display: inline-block; width: 40px; height: 40px; line-height: 38px; text-align: center; 
+			border:1px solid #fff; @extend .tss; font-size: 20px; border-radius: 100%; margin-right: 10px;
+			&:hover {
+				border-color: $color1;
+			}
+
+		}
+	}
+	.menu {
+		margin:0; padding: 0; list-style: none;
+		li { 
+			display: block; 
+			&+li { margin-top: 15px; }
+		}
+		a { display: block; }
+	}
+}
+.copyright {
+	line-height: 48px; background-color: #000;
+}

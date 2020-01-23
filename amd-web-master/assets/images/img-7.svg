@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="214px" height="428px" viewBox="0 0 214 428" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="97.873013%" id="linearGradient-1">
+            <stop stop-color="#9D9FA2" offset="0%"></stop>
+            <stop stop-color="#27282B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.7">
+        <g id="04-AMD-CPU-Catergory" transform="translate(0.000000, -179.000000)" fill-rule="nonzero" stroke="url(#linearGradient-1)">
+            <path d="M-156,240 C-155.394915,240.783276 -134.387279,261.066235 -92.9770904,300.848877 L88.8909854,300.848877 L88.8909854,484.361363 L150,546 C150,546 150,341.303754 150,240 C47.9567797,240 -54.0864407,240 -156,240 Z" id="Shape-Copy-2" transform="translate(-3.000000, 393.000000) scale(-1, 1) rotate(-135.000000) translate(3.000000, -393.000000) "></path>
+        </g>
+    </g>
+</svg>

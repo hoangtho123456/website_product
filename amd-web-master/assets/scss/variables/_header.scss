@@ -1,0 +1,26 @@
+$header:95px; 
+$header-md:80px; 
+$header-sm:70px;  
+$header-xs:70px;       
+
+// Logo  
+$logo-img : $header - 10; 
+$logo-img-md : $header-md - 5;  
+$logo-img-sm : $header-sm - 5; 
+$logo-img-xs : $header-xs - 35; 
+
+
+$hd_bg :transparent;
+$hd_color : #fff;  
+$hd_zindex : 1000; 
+
+
+$hd_border : n; 
+$hd_border_color : #000;  
+$hd_shadow : n; 
+
+	// Fixe
+	$hd_fix_shadow : 0 0 10px rgba(255,255,255, 0.5); 
+	$hd_fix_bg : rgba(0,0,0,0.8);
+	$hd_fix_border_color : #000;   
+	

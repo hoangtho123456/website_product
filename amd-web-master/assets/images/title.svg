@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="60px" viewBox="0 0 30 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 13</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="42.6544878%" x2="100%" y2="42.6544878%" id="linearGradient-1">
+            <stop stop-color="#ED1C24" offset="0%"></stop>
+            <stop stop-color="#F26522" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="05-AMD-CPU-Product-detail" transform="translate(-642.000000, -3069.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Group-13" transform="translate(642.000000, 3069.000000)">
+                <path d="M0,0 C0.0593220339,0.0767918089 2.11889424,2.0653172 6.17871663,5.96557617 L24.0089201,5.96557617 L24.0089201,23.9569964 L30,30 C30,30 30,9.93174061 30,0 C19.9957627,3.6375908e-15 9.99152542,3.6375908e-15 0,0 Z" id="Shape-Copy-5" transform="translate(15.000000, 15.000000) rotate(-90.000000) translate(-15.000000, -15.000000) "></path>
+                <path d="M0,30 C0.0593220339,30.0767918 2.11889424,32.0653172 6.17871663,35.9655762 L24.0089201,35.9655762 L24.0089201,53.9569964 L30,60 C30,60 30,39.9317406 30,30 C19.9957627,30 9.99152542,30 0,30 Z" id="Shape-Copy-6" transform="translate(15.000000, 45.000000) scale(-1, 1) rotate(-180.000000) translate(-15.000000, -45.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

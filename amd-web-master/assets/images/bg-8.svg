@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="842px" viewBox="0 0 1440 842" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 21</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50.7351345%" cy="0%" fx="50.7351345%" fy="0%" r="106.194329%" gradientTransform="translate(0.507351,0.000000),scale(0.584722,1.000000),rotate(90.000000),translate(-0.507351,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#636466" offset="0%"></stop>
+            <stop stop-color="#636466" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="03-ADM-CPU-Intro" transform="translate(0.000000, -1119.000000)" fill="url(#radialGradient-1)">
+            <rect id="Rectangle-21" x="0" y="1119" width="1440" height="842"></rect>
+        </g>
+    </g>
+</svg>

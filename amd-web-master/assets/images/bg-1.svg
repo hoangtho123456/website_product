@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1434px" viewBox="0 0 1440 1434" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 39</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="44.2863907%" fx="50%" fy="44.2863907%" r="55.2701757%" id="radialGradient-1">
+            <stop stop-color="#636466" offset="0%"></stop>
+            <stop stop-color="#636466" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="01-Homepage" transform="translate(0.000000, -589.000000)" fill="url(#radialGradient-1)">
+            <rect id="Rectangle-39" x="0" y="589" width="1440" height="1440"></rect>
+        </g>
+    </g>
+</svg>

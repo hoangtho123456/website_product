@@ -1,0 +1,85 @@
+// DEFAULT
+$color1 : #ED1C24;  
+$color2: #000;
+$color3: #fff;   
+$color4: #F26522; 
+
+$color5: #ec2028;
+$color6: #5497f4;  
+
+$section_pd : 100px; 
+
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:100,300,400,400i,500,700,900&subset=vietnamese');
+
+// Font 
+$font1 : 'Arial', sans-serif;;
+$font2 : 'Quicksand', sans-serif;
+
+@import "variables/header";
+@import "variables/menu";
+@import "variables/form";
+@import "variables/slider";
+@import "variables/tabs";
+@import "variables/pagination";   
+@import "variables/thumb";    
+
+
+
+/* EXTEND 
+-------------------------------------------------*/
+span.imgres  { 
+  @extend %imgres;    
+}
+
+#header  { 
+  @extend %header-1;   
+}
+// .divmodal {   
+//     @extend %divmodal;         
+// }
+
+.owl-carousel {  
+    @extend %owl;      
+    &.nav-1 {
+        @extend %owl-nav-1;
+    }  
+    &.nav-2 {
+        @extend %owl-nav-2;
+    }      
+}
+// .cttab-v1 {
+//     @extend %cttab-v1;
+//}
+// .thumb-1 {
+//     @extend %thumb-1;
+// }
+
+
+ul.page-numbers {
+    @extend %pagination-1;
+}
+
+.rowlabel {
+    @extend %rowlabel;
+}
+
+//Form
+
+    .input {   
+        @extend %input;          
+    }
+    select {   
+        @extend %select;          
+    }
+    // label.checkbox {    
+    //     @extend %checkbox;           
+    // }
+    // label.radio {    
+    //     @extend %radio;           
+    // }
+    // label.switch {    
+    //     @extend %switch;           
+    // }
+
+

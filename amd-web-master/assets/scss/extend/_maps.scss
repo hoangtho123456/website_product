@@ -1,0 +1,67 @@
+.gm-style-iw-parent {
+    width: 250px !important;
+    &> div:first-child {
+      top: auto !important;
+      bottom: 0 !important;
+    }
+    & > div:first-child > div {
+      top: auto !important;
+      left: 245px !important;
+      z-index: 1;
+      transform: rotate(-90deg) !important;
+      transform-origin: top left;
+      bottom: 56px !important;
+    }
+    & > div:first-child > div:first-child{
+      display: none;
+    }
+
+
+  .gm-style-iw {
+     width: 250px !important;
+     top: 0 !important;
+     left: 0 !important;
+     border-radius: 2px 2px 0 0;
+
+    & + div {
+        right: -5px !important;
+        top: -5px !important;
+        border-radius: 5px !important;
+        background-color: #ff4b4b !important;
+    }
+    & + div:after {
+        content: "X";
+        color: #fff;
+        padding: 0 3px;
+    }
+    & + div img {
+        display: none !important;
+    }
+
+  }
+
+}
+
+.mapCard {
+  color: #333;
+  width: 240px;
+  float: left;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.6);
+  min-height: 80px;
+  margin: 5px;
+  background-color: #fff; display: block;
+  padding: 15px;
+  .title { display: block;  font-size: 120%; font-weight: 500; text-transform: uppercase; }
+  .address { display: block;   } 
+  .phone {
+    .key { font-weight: 700; }
+  }
+  .text {      
+    display: block;   
+    .address { display: block;  }  
+  }    
+  &>.address { display: block; padding: 0 15px 15px; }   
+}
