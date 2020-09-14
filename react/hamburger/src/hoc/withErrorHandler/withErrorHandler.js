@@ -7,21 +7,28 @@ const withErrorHandler = (WrappedComponent, axios) => {
     state = {
       error: null
     };
+    _isMounted = false;
 
     componentWillMount() {
+      this._isMounted = true;
       this.reqInterceptor = axios.interceptors.request.use(req => {
-        this.setState({ error: null });
+        this.setState({error: null});
         return req;
       });
-      this.resInterceptor = axios.interceptors.response.use(res => res, error=> {
-        this.setState({error: error});
+      // console.log('Will mounted', this.state.error, this._isMounted);
+      this.resInterceptor = axios.interceptors.response.use(res => res, error => {
+        if (this._isMounted) {
+          this.setState({error: error});
+        }
+        // console.log('Will mounted error', this.state.error, this._isMounted);
       });
     }
 
     componentWillUnmount() {
-      //console.log('Will Unmounted', this.reqInterceptor, this.resInterceptor);
+      // console.log('Will Unmounted', this.reqInterceptor, this.resInterceptor, this._isMounted);
       axios.interceptors.request.eject(this.reqInterceptor);
-      axios.interceptors.request.eject(this.resInterceptor);
+      axios.interceptors.response.eject(this.resInterceptor);
+      this._isMounted = false;
     }
 
     errorConfirmHandler = () => {
@@ -36,7 +43,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             {this.state.error ? this.state.error.message : null}
           </Modal>
           <WrappedComponent {...this.props} />
-        </Aux>  
+        </Aux>
       );
     }
   }
